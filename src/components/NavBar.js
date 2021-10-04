@@ -8,7 +8,7 @@ import logoImage from '../images/logo.svg'
 
 const NavBar = () => {
   return (
-    <div className="relative border-b border-gray-800 border-opacity-30 h-20 w-full">
+    <div className="border-b border-gray-800 border-opacity-30 h-20 w-full sticky top-0 bg-primary z-50">
       <div className="absolute w-full h-px bg-black bg-opacity-30 bottom-0"></div>
       <Container className="h-full flex items-center justify-between">
         <div className="h-full flex items-center">
