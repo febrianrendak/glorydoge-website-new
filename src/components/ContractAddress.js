@@ -10,13 +10,13 @@ const ContractAddress = () => {
         href="https://bscscan.com/token/0xcc5667333f5e997ac9f0c26d41b7dda65b2b675a"
         target="_blank"
         rel="noreferrer"
-        className="w-full h-16 rounded-lg bg-secondary bg-opacity-30 border border-secondary flex items-center justify-between text-sm pr-2 pl-4 hover:bg-opacity-60 transition"
+        className="flex items-center justify-between pl-4 pr-2 w-full h-16 text-sm bg-secondary bg-opacity-30 hover:bg-opacity-60 border border-secondary rounded-lg transition"
       >
         <p>
           GloryDoge Contract:{' '}
           <span className="font-bold">0xcc5667333f5e997ac9f0c26d41b7dda65b2b675a</span>
         </p>
-        <span className="btn-secondary">
+        <span className="btn btn-secondary">
           <DocumentTextIcon className="btn-icon" />
           See on BscScan
         </span>

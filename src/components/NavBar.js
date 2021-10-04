@@ -8,13 +8,13 @@ import logoImage from '../images/logo.svg'
 
 const NavBar = () => {
   return (
-    <div className="border-b border-gray-800 border-opacity-30 h-20 w-full sticky top-0 bg-primary z-50">
-      <div className="absolute w-full h-px bg-black bg-opacity-30 bottom-0"></div>
-      <Container className="h-full flex items-center justify-between">
-        <div className="h-full flex items-center">
+    <div className="sticky z-50 top-0 w-full h-20 bg-primary border-b border-gray-800 border-opacity-30">
+      <div className="absolute bottom-0 w-full h-px bg-black bg-opacity-30"></div>
+      <Container className="flex items-center justify-between h-full">
+        <div className="flex items-center h-full">
           <div
             style={{ background: `url(${logoImage}) no-repeat center/contain` }}
-            className="h-full w-11 mr-5"
+            className="mr-5 w-11 h-full"
           ></div>
           <h1>
             <Link to="/" className="font-expletus text-2xl">
@@ -22,7 +22,7 @@ const NavBar = () => {
             </Link>
           </h1>
         </div>
-        <ul className="flex space-x-6 items-center text-sm">
+        <ul className="flex items-center text-sm space-x-6">
           <li>
             <Link to="#">GloryPush</Link>
           </li>
@@ -46,7 +46,7 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <Link to="/private-sale" className="btn-primary">
+            <Link to="/private-sale" className="btn">
               <CashIcon className="btn-icon" />
               <span>Buy GLORYD</span>
             </Link>

@@ -8,7 +8,7 @@ const ProductsSection = () => {
     <Container className="relative mt-36 pt-20">
       <SectionBackground />
       <div className="flex flex-col items-center">
-        <h2 className="text-4xl leading-normal w-auto font-bold text-gradient">GloryPush</h2>
+        <h2 className="text-gradient w-auto text-4xl font-bold leading-normal">GloryPush</h2>
       </div>
     </Container>
   )
