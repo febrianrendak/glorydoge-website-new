@@ -7,7 +7,7 @@ import Container from './Container'
 
 const Hero = () => {
   return (
-    <Container className="flex mt-20">
+    <Container className="flex my-28">
       <div className="flex flex-1 flex-col items-center justify-center mr-6">
         <h1 className="text-4xl font-bold leading-relaxed">
           Building platforms & tools to secure DeFi investors' funds during{' '}

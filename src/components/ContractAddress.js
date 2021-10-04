@@ -5,7 +5,7 @@ import Container from './Container'
 
 const ContractAddress = () => {
   return (
-    <Container className="py-5">
+    <Container className="pb-0 pt-5">
       <a
         href="https://bscscan.com/token/0xcc5667333f5e997ac9f0c26d41b7dda65b2b675a"
         target="_blank"

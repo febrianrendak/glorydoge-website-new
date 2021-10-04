@@ -11,7 +11,9 @@ const IndexPage = () => {
       <NavBar />
       <ContractAddress />
       <Hero />
-      <ProductsSection />
+      <div className="space-y-20">
+        <ProductsSection />
+      </div>
     </>
   )
 }

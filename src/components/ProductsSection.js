@@ -5,7 +5,7 @@ import SectionBackground from './SectionBackground'
 
 const ProductsSection = () => {
   return (
-    <Container className="relative mt-36 pt-20">
+    <Container className="relative pt-20">
       <SectionBackground />
       <div className="flex flex-col items-center">
         <h2 className="text-gradient w-auto text-4xl font-bold leading-normal">GloryPush</h2>
