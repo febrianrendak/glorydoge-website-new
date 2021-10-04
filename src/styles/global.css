@@ -13,11 +13,11 @@
 
 @layer components {
   .btn {
-    @apply flex items-center px-3 h-11 bg-orange bg-opacity-20 hover:bg-opacity-40 border border-orange rounded-lg shadow-md transition;
+    @apply flex items-center px-3 h-11 bg-orange bg-opacity-20 hover:bg-opacity-40 border border-orange border-opacity-20 rounded-lg shadow-md transition;
   }
 
   .btn-secondary {
-    @apply bg-secondary bg-opacity-20 border-secondary;
+    @apply bg-secondary bg-opacity-20 border-secondary border-opacity-20;
   }
 
   .btn-icon {

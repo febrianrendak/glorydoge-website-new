@@ -5,9 +5,9 @@ import { ChatAltIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
 
-const Jumbotron = () => {
+const Hero = () => {
   return (
-    <Container className="flex mt-28">
+    <Container className="flex mt-20">
       <div className="flex flex-1 flex-col items-center justify-center mr-6">
         <h1 className="text-4xl font-bold leading-relaxed">
           Building platforms & tools to secure DeFi investors' funds during{' '}
@@ -44,4 +44,4 @@ const Jumbotron = () => {
   )
 }
 
-export default Jumbotron
+export default Hero
