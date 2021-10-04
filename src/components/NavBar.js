@@ -24,22 +24,26 @@ const NavBar = () => {
         </div>
         <ul className="flex space-x-6 items-center text-sm">
           <li>
-            <Link>GloryPush</Link>
+            <Link to="#">GloryPush</Link>
           </li>
           <li>
-            <Link>Tokenomics</Link>
+            <Link to="#">Tokenomics</Link>
           </li>
           <li>
-            <Link>Roadmap</Link>
+            <Link to="#">Roadmap</Link>
           </li>
           <li>
-            <Link>Team</Link>
+            <Link to="#">Team</Link>
           </li>
           <li>
-            <Link>White Paper</Link>
+            <a href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
+              White Paper
+            </a>
           </li>
           <li>
-            <Link>GitHub</Link>
+            <a href="https://github.com/GloryDoge" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           </li>
           <li>
             <Link to="/private-sale" className="btn-primary">
