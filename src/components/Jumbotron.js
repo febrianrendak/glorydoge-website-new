@@ -17,11 +17,21 @@ const Jumbotron = () => {
         </h1>
 
         <div className="flex w-full space-x-4 mt-8">
-          <a className="btn-primary" href="https://docs.glorydogecoin.com" target="_blank">
+          <a
+            className="btn-primary"
+            href="https://docs.glorydogecoin.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <NewspaperIcon className="btn-icon" />
             <span>Read the White Paper</span>
           </a>
-          <a className="btn-secondary" href="https://t.me/GloryDogeCoin" target="_blank">
+          <a
+            className="btn-secondary"
+            href="https://t.me/GloryDogeCoin"
+            target="_blank"
+            rel="noreferrer"
+          >
             <ChatAltIcon className="btn-icon" />
             <span>Join on Telegram</span>
           </a>
