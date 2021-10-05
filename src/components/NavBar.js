@@ -24,10 +24,10 @@ const NavBar = () => {
         </div>
         <ul className="flex items-center text-sm space-x-6">
           <li>
-            <Link to="#">GloryPush</Link>
+            <Link to="#">GloryPad</Link>
           </li>
           <li>
-            <Link to="#">Tokenomics</Link>
+            <Link to="#">Token</Link>
           </li>
           <li>
             <Link to="#">Roadmap</Link>

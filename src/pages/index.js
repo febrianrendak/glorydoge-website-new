@@ -3,13 +3,13 @@ import * as React from 'react'
 import NavBar from '../components/NavBar'
 import ContractAddress from '../components/ContractAddress'
 import Hero from '../components/Hero'
-import ProductsSection from '../components/ProductsSection'
+import ProductsSection from '../components/ProductSection'
 
 const IndexPage = () => {
   return (
     <>
       <NavBar />
-      <ContractAddress />
+      {/* <ContractAddress /> */}
       <Hero />
       <div className="space-y-20">
         <ProductsSection />

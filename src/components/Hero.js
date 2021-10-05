@@ -8,12 +8,11 @@ import Container from './Container'
 const Hero = () => {
   return (
     <Container className="flex my-28">
-      <div className="flex flex-1 flex-col items-center justify-center mr-6">
-        <h1 className="text-4xl font-bold leading-relaxed">
-          Building platforms & tools to secure DeFi investors' funds during{' '}
-          <span className="text-gradient">
-            IDO private sales and <span className="whitespace-nowrap">pre-sales.</span>
-          </span>
+      <div className="flex flex-col items-start justify-center w-5/12 box-border">
+        <h1 className="w-11/12 text-2xl font-bold leading-relaxed">
+          Building platforms and tools to secure DeFi investors' funds during IDO{' '}
+          <span className="text-gradient">private sales</span> &{' '}
+          <span className="text-gradient">pre-sales</span>.
         </h1>
 
         <div className="flex mt-8 w-full space-x-4">
@@ -36,8 +35,10 @@ const Hero = () => {
         <StaticImage
           src="../images/glorypush.png"
           alt=""
-          quality="100"
-          className="border border-opacity-5 rounded shadow-preview"
+          quality="90"
+          // width={608}
+          className=""
+          placeholder="none"
         />
       </div>
     </Container>
