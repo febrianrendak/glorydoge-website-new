@@ -8,14 +8,16 @@ import Container from './Container'
 const Hero = () => {
   return (
     <Container className="flex my-28">
-      <div className="flex flex-col items-start justify-center w-5/12 box-border">
-        <h1 className="w-11/12 text-2xl font-bold leading-relaxed">
-          Building platforms and tools to secure DeFi investors' funds during IDO{' '}
-          <span className="text-gradient">private sales</span> &{' '}
-          <span className="text-gradient">pre-sales</span>.
+      <div className="flex flex-col items-start justify-center w-5/12 box-border space-y-6">
+        <h1 className="text-gradient w-[530px] text-6xl font-bold leading-tight">
+          Blockchain platforms & tools to kickstart ideas
         </h1>
+        <p className="w-11/12 text-lg leading-relaxed">
+          Building a secure DeFi ecosystem to help bring creative ideas to life and protect early
+          investors' funds.
+        </p>
 
-        <div className="flex mt-8 w-full space-x-4">
+        <div className="flex w-full space-x-4">
           <a className="btn" href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
             <NewspaperIcon className="btn-icon" />
             <span>Read the White Paper</span>
@@ -31,12 +33,12 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex flex-1 items-center">
         <StaticImage
           src="../images/glorypush.png"
           alt=""
           quality="90"
-          // width={608}
+          width={710}
           className=""
           placeholder="none"
         />
