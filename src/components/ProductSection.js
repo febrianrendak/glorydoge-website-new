@@ -18,15 +18,11 @@ const Feature = ({ title, picture, children, reverse = false }) => {
 
 const ProductsSection = () => {
   return (
-    <SectionContainer>
-      <div className="flex flex-col items-center mx-auto w-2/4 text-center space-y-4">
-        <h2 className="text-gradient w-auto text-5xl font-bold leading-normal">GloryPad</h2>
-        <p className="text-lg leading-relaxed">
-          A next-gen IDO Launchpad where developers, influencers, and investors gather to bring
-          creative ideas to life. (Coming soon)
-        </p>
-      </div>
-
+    <SectionContainer
+      title="GloryPad"
+      description="A next-gen IDO Launchpad where developers, influencers, and investors gather to bring
+    creative ideas to life. (Coming soon)"
+    >
       <div className="my-32 space-y-32">
         <Feature
           title="Home for innovative projects and next big things"
@@ -52,8 +48,8 @@ const ProductsSection = () => {
           <p>It's not just about raising funds. It's about how they will be used.</p>
           <p>
             Automatically pay for services your project needs by defining tasks that investors can
-            fund. If the sale timer ends before a task is completed, investors will be able to get a
-            refund.
+            fund. If a task is canceled, or the sale timer ends before a task is completed,
+            investors will be able to get a refund.
           </p>
           <p>
             The more tasks added, the more trust you gain from investor, and the more they will be

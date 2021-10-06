@@ -46,7 +46,7 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <Link to="/private-sale" className="btn">
+            <Link to="/private-sale" className="btn btn-secondary">
               <CashIcon className="btn-icon" />
               <span>Buy GLORYD</span>
             </Link>
