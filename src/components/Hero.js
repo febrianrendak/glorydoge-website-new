@@ -34,14 +34,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex flex-1 items-center">
-        <StaticImage
-          src="../images/glorypush.png"
-          alt=""
-          quality="90"
-          width={710}
-          className=""
-          placeholder="none"
-        />
+        <StaticImage src="../images/glorypush.png" alt="" quality="90" placeholder="none" />
       </div>
     </Container>
   )
