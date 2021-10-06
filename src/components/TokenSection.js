@@ -32,7 +32,7 @@ const TokenSection = () => {
           description="2% of every transaction is collected for marketing to spread the word to founders and investors out there."
           link={
             <a
-              className="block mt-2 text-secondary"
+              className="block mt-2 text-secondary text-sm"
               href="https://bscscan.com/address/0xe2149C2E2A9e664E9AD5f20eb90db575bcb95F18"
               target="_blank"
               rel="noreferrer"
@@ -47,7 +47,7 @@ const TokenSection = () => {
           description="4% of every transaction is dedicated to keep the project going by covering team expenses."
           link={
             <a
-              className="block mt-2 text-secondary"
+              className="block mt-2 text-secondary text-sm"
               href="https://bscscan.com/address/0xdc4340b73a388863590476ef7d450bc316d87712"
               target="_blank"
               rel="noreferrer"
