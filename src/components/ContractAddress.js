@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { DocumentTextIcon } from '@heroicons/react/solid'
 
-import Container from './Container'
-
 const ContractAddress = ({ className }) => {
   return (
     <a
