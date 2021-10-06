@@ -27,7 +27,7 @@ const ProductsSection = () => {
         </p>
       </div>
 
-      <div className="my-24 space-y-24">
+      <div className="my-32 space-y-32">
         <Feature
           title="Home for innovative projects and next big things"
           picture={
