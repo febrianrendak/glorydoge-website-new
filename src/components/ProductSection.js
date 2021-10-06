@@ -35,7 +35,7 @@ const ProductsSection = () => {
           }
         >
           <p>
-            Got an awesome crypto project idea? GloryPad helps makers raise the initial funds and
+            Got an awesome crypto project idea? GloryPad helps Founders raise the initial funds and
             pave the way to success.
           </p>
           <p>
@@ -45,7 +45,7 @@ const ProductsSection = () => {
         </Feature>
 
         <Feature
-          title="Makers take the lead, investors get stuff done"
+          title="Founders take the lead, investors get stuff done"
           picture={<StaticImage src="../images/task.png" alt="" quality="100" placeholder="none" />}
           reverse
         >
@@ -74,7 +74,7 @@ const ProductsSection = () => {
         </Feature>
 
         <Feature
-          title={`Multi-Chain investor?\nWe got you covered`}
+          title={`Project on another chain? We got you covered`}
           picture={
             <StaticImage src="../images/networks.png" alt="" quality="100" placeholder="none" />
           }
