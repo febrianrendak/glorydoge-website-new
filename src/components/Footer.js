@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="mt-32 w-full bg-black bg-opacity-60">
       <Container>
-        <div className="pattern h-[100px] flex items-center justify-between">
+        <div className="pattern lg:h-[100px] flex flex-col items-center justify-between py-10 space-y-10 lg:flex-row lg:py-0">
           <div className="flex flex-1 items-center">
             <StaticImage
               src="../images/logo.svg"

@@ -21,7 +21,11 @@
 
 @layer components {
   .btn {
-    @apply flex items-center px-3 h-11 bg-orange bg-opacity-20 hover:bg-opacity-40 border border-orange border-opacity-20 rounded-lg shadow-md transition;
+    @apply flex items-center px-3 h-11 text-center bg-orange bg-opacity-20 hover:bg-opacity-40 border border-orange border-opacity-20 rounded-lg shadow-md transition;
+  }
+
+  .btn-text {
+    @apply w-full text-center;
   }
 
   .btn-secondary {

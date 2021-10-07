@@ -5,13 +5,19 @@ import SectionContainer from './SectionContainer'
 
 const Feature = ({ title, picture, children, reverse = false }) => {
   return (
-    <div className="grid gap-y-24 grid-cols-2 place-items-center">
-      <div className="w-10/12">
-        <h3 className="mb-5 whitespace-pre-line text-4xl font-bold leading-snug">{title}</h3>
-        <div className="leading-relaxed space-y-2">{children}</div>
+    <div className="grid gap-y-8 grid-cols-1 place-items-center lg:gap-y-24 lg:grid-cols-2">
+      <div className="flex flex-col items-center text-center lg:w-4/6 lg:text-left xl:w-10/12">
+        <h3 className="mb-5 whitespace-pre-line text-xl font-bold leading-snug sm:w-3/4 sm:text-2xl md:w-3/6 lg:w-auto xl:text-4xl">
+          {title}
+        </h3>
+        <div className="text-sm leading-relaxed space-y-2 sm:w-3/4 md:w-4/6 lg:w-auto xl:text-base">
+          {children}
+        </div>
       </div>
 
-      <div className={`w-[400px] ${reverse ? 'order-[-1]' : ''}`}>{picture}</div>
+      <div className={`sm:w-[400px] order-[-1]  ${reverse ? 'lg:order-[-1]' : 'lg:order-none'}`}>
+        {picture}
+      </div>
     </div>
   )
 }
@@ -23,7 +29,7 @@ const ProductsSection = () => {
       description="A next-gen IDO Launchpad where developers, influencers, and investors gather to bring
     creative ideas to life. (Coming soon)"
     >
-      <div className="my-32 space-y-32">
+      <div className="my-32 space-y-20 lg:space-y-32">
         <Feature
           title="Home for innovative projects and next big things"
           picture={

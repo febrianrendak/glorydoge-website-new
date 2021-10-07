@@ -4,19 +4,21 @@ import SectionContainer from './SectionContainer'
 
 const List = ({ number, items = [], className }) => {
   return (
-    <div className="grid grid-cols-2 my-32">
-      <div className={`flex items-center justify-center w-full`}>
-        <h3 className="text-6xl font-bold uppercase">Phase {number}</h3>
+    <div className="grid gap-y-4 grid-cols-1 mx-auto my-32 sm:w-3/4 md:gap-y-0 md:grid-cols-3 md:w-auto lg:grid-cols-2">
+      <div className={`flex items-center md:justify-center w-full`}>
+        <h3 className="text-4xl font-bold uppercase xl:text-6xl">Phase {number}</h3>
       </div>
-      <div className={`flex flex-col place-self-start relative pl-10`}>
+      <div
+        className={`flex flex-col place-self-start relative pl-6 xl:pl-10 col-span-2 lg:col-auto`}
+      >
         <div className="w-[2px] absolute bottom-0 left-0 top-0 bg-gradient-to-b rounded from-secondary to-orange" />
         <ul className="space-y-5">
           {items.map((item, index) => (
             <li className="flex items-center" key={`${number}-${index}`}>
-              <div className="w-[20px] h-[20px] flex items-center justify-center mr-3 bg-black bg-opacity-50 border border-secondary border-opacity-100 rounded-full">
+              <div className="w-[20px] h-[20px] min-h-[20px] min-w-[20px] flex items-center justify-center mr-3 bg-black bg-opacity-50 border border-secondary border-opacity-100 rounded-full">
                 {item.done && <div className="w-[16px] h-[16px] bg-secondary rounded-full" />}
               </div>
-              {item.text}
+              <p className="text-sm xl:text-base">{item.text}</p>
             </li>
           ))}
         </ul>
@@ -60,7 +62,7 @@ const RoadmapSection = () => {
         items={[
           { done: false, text: 'Finalize and release GloryPad to the market' },
           { done: false, text: 'Extensive marketing and user base building' },
-          { done: false, text: 'Hire more team members: Developers, marketers, designers...' },
+          { done: false, text: 'Hire more team members' },
           { done: false, text: 'Kick off the development of new features and DAPPs' },
         ]}
       />
