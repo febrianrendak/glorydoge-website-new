@@ -5,7 +5,7 @@ import SectionContainer from './SectionContainer'
 
 const Feature = ({ header, title, description, link }) => {
   return (
-    <div className="flex flex-col items-center sm:w-5/6 md:w-4/5 lg:w-9/12">
+    <div className="sm:w-[220px] md:w-[280px] lg:w-[340px] flex flex-col items-center">
       <span className="text-center font-expletus text-7xl font-bold md:text-8xl lg:text-9xl">
         {header}
       </span>
@@ -22,7 +22,9 @@ const TokenSection = () => {
       title="GLORYD"
       description="The backbone of our projects, and the golden bridge connecting our DAPPs to our inverstors. Backed by a solid economic model."
     >
-      <div className="grid gap-y-32 grid-cols-1 justify-items-center mx-auto my-32 sm:grid-cols-2 sm:w-10/12 xl:w-9/12">
+      <div className="grid gap-y-24 grid-cols-1 justify-items-center mb-32 mt-8 mx-auto sm:grid-cols-2 sm:w-auto md:gap-y-32 md:w-auto xl:w-9/12">
+        <ContractAddress className="sm:col-span-2" />
+
         <Feature
           header="4%"
           title="Holder rewards tax"
@@ -63,8 +65,6 @@ const TokenSection = () => {
           title="Wallet transfer tax"
           description="Normal transfers from wallet to wallet are not subject to any fees or taxes."
         />
-
-        <ContractAddress className="sm:col-span-2" />
 
         <Feature
           header="50%"

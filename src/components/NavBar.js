@@ -4,19 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { CashIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
-
-const SocialLink = ({ url, icon }) => {
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-      className="flex items-center justify-center w-8 h-8 bg-black bg-opacity-20 rounded-lg"
-    >
-      <i className={`${icon} leading-[0] text-base`} />
-    </a>
-  )
-}
+import SocialLink from './SocialLink'
 
 const NavBar = () => {
   return (
@@ -57,7 +45,7 @@ const NavBar = () => {
               </a>
             </li>
           </div>
-          <li className="hidden space-x-2 lg:flex">
+          <li className="hidden space-x-2 sm:flex">
             <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" />
             <SocialLink icon="bi bi-twitter" url="https://twitter.com/GloryDogeCoin" />
             <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" />

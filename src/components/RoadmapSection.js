@@ -4,7 +4,7 @@ import SectionContainer from './SectionContainer'
 
 const List = ({ number, items = [], className }) => {
   return (
-    <div className="grid gap-y-4 grid-cols-1 mx-auto my-32 sm:w-3/4 md:gap-y-0 md:grid-cols-3 md:w-auto lg:grid-cols-2">
+    <div className="grid gap-y-4 grid-cols-1 mx-auto my-24 sm:my-32 sm:w-3/4 md:gap-y-0 md:grid-cols-3 md:w-auto lg:grid-cols-2">
       <div className={`flex items-center md:justify-center w-full`}>
         <h3 className="text-4xl font-bold uppercase xl:text-6xl">Phase {number}</h3>
       </div>

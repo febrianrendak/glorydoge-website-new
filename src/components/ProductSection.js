@@ -29,7 +29,7 @@ const ProductsSection = () => {
       description="A next-gen IDO Launchpad where developers, influencers, and investors gather to bring
     creative ideas to life. (Coming soon)"
     >
-      <div className="my-32 space-y-20 lg:space-y-32">
+      <div className="my-24 space-y-20 sm:my-32 lg:space-y-32">
         <Feature
           title="Home for innovative projects and next big things"
           picture={

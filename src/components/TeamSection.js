@@ -9,7 +9,7 @@ const TeamSection = () => {
       title="Team"
       description="A team of highly motivated minds, with years of solid knowledge and experience in Software Engineering, UI/UX Design, and Marketing."
     >
-      <div className="grid gap-y-20 grid-cols-1 mx-auto my-32 sm:w-80 lg:gap-x-14 lg:grid-cols-3 lg:w-10/12">
+      <div className="grid gap-y-20 grid-cols-1 mx-auto my-24 sm:my-32 sm:w-80 lg:gap-x-14 lg:grid-cols-3 lg:w-10/12">
         <div className="flex flex-col items-center">
           <StaticImage
             src="../images/joey.png"

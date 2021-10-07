@@ -15,6 +15,7 @@ const Footer = () => {
               className="mr-5 w-11"
               quality={100}
               placeholder="none"
+              loading="eager"
             />
             <h1 className="font-expletus text-2xl font-bold">GloryDoge</h1>
           </div>
