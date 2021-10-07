@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         opensans: ['Open Sans', 'sans-serif'],
-        expletus: ['Expletus Sans', 'cursive'],
+        expletus: ['Expletus Sans', 'sans-serif'],
       },
       colors: {
         primary: '#001524',

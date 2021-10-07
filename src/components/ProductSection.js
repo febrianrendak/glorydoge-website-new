@@ -48,12 +48,12 @@ const ProductsSection = () => {
           <p>It's not just about raising funds. It's about how they will be used.</p>
           <p>
             Automatically pay for services your project needs by defining tasks that investors can
-            fund. If a task is canceled, or the sale timer ends before a task is completed,
-            investors will be able to get a refund.
+            fund. If a task is canceled, or the sale soft cap is not met, investors will be
+            refunded.
           </p>
           <p>
             The more tasks added, the more trust you gain from investor, and the more they will be
-            willing to push your project forward.
+            help push your project forward.
           </p>
         </Feature>
 

@@ -11,14 +11,14 @@ const NavBar = () => {
     <div className="sticky z-50 top-0 w-full h-20 bg-primary border-b border-gray-800 border-opacity-30">
       <div className="absolute bottom-0 w-full h-px bg-black bg-opacity-30"></div>
       <Container className="flex items-center justify-between h-full">
-        <div className="flex items-center h-full">
-          <div
-            style={{ background: `url(${logoImage}) no-repeat center/contain` }}
-            className="mr-5 w-11 h-full"
-          ></div>
-          <h1>
-            <Link to="/" className="font-expletus text-2xl">
-              GloryDoge
+        <div className="h-full">
+          <h1 className="h-full">
+            <Link to="/" className="flex items-center h-full font-expletus text-2xl">
+              <div
+                style={{ background: `url(${logoImage}) no-repeat center/contain` }}
+                className="mr-5 w-11 h-full"
+              ></div>
+              <span>GloryDoge</span>
             </Link>
           </h1>
         </div>
