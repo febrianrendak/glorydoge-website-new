@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 import ProductsSection from '../components/ProductSection'
 import TokenSection from '../components/TokenSection'
 import RoadmapSection from '../components/RoadmapSection'
-// import TeamSection from '../components/TeamSection'
+import TeamSection from '../components/TeamSection'
 
 const IndexPage = () => {
   return (
@@ -16,7 +16,7 @@ const IndexPage = () => {
         <ProductsSection />
         <TokenSection />
         <RoadmapSection />
-        {/* <TeamSection /> */}
+        <TeamSection />
       </div>
     </>
   )

@@ -37,7 +37,9 @@ const RoadmapSection = () => {
         number="I"
         items={[
           { done: true, text: 'Deploy token contract on BSC' },
+          { done: true, text: 'Deploy distribution contract on BSC' },
           { done: true, text: 'Deploy private sale contract on BSC' },
+          { done: true, text: 'White Paper release' },
           { done: true, text: 'New website release' },
           { done: true, text: 'Pre-sale whitelist contest' },
         ]}
