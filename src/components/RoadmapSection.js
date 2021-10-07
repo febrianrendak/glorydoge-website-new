@@ -14,8 +14,8 @@ const List = ({ number, items = [], className }) => {
           {items.map(item => (
             <>
               <li className="flex items-center">
-                <div className="w-[30px] h-[30px] flex items-center justify-center mr-3 bg-black bg-opacity-40 border border-black border-opacity-20 rounded-md">
-                  {item.done && <div className="w-[18px] h-[18px] bg-secondary rounded-sm" />}
+                <div className="w-[20px] h-[20px] flex items-center justify-center mr-3 bg-black bg-opacity-50 border border-secondary border-opacity-100 rounded-full">
+                  {item.done && <div className="w-[16px] h-[16px] bg-secondary rounded-full" />}
                 </div>
                 {item.text}
               </li>
