@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { NewspaperIcon } from '@heroicons/react/solid'
 import { ChatAltIcon, CashIcon } from '@heroicons/react/solid'
@@ -31,15 +32,10 @@ const Hero = () => {
             <NewspaperIcon className="btn-icon" />
             <span className="btn-text">Read the White Paper</span>
           </a>
-          <a
-            className="btn btn-secondary sm:hidden"
-            href="https://t.me/GloryDogeCoin"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <Link to="/private-sale" className="btn btn-secondary sm:hidden">
             <CashIcon className="btn-icon" />
             <span className="btn-text">Buy GLORYD</span>
-          </a>
+          </Link>
           <a
             className="btn btn-secondary"
             href="https://t.me/GloryDogeCoin"

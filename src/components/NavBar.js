@@ -53,7 +53,7 @@ const NavBar = () => {
           <li className="hidden sm:block">
             <Link to="/private-sale" className="btn btn-secondary">
               <CashIcon className="btn-icon" />
-              <span>Buy GLORYD</span>
+              <span className="btn-text">Buy GLORYD</span>
             </Link>
           </li>
         </ul>

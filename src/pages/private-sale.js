@@ -6,10 +6,11 @@ const PrivateSalePage = () => {
   return (
     <>
       <NavBar />
-      <div className="flex items-center justify-center mt-60 w-full">
+      <div className="flex items-center justify-center mt-60 px-10 w-full">
         <h1 className="text-gradient text-4xl font-bold leading-normal">
           Private sale will begin soon. <br />
-          Join us on Telegram to keep updated.
+          <br />
+          Join us on Telegram to stay updated.
         </h1>
       </div>
     </>
