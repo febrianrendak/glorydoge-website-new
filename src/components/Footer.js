@@ -5,7 +5,7 @@ import Container from './Container'
 
 const Footer = () => {
   return (
-    <div className="mt-64 w-full bg-black bg-opacity-60">
+    <div className="mt-32 w-full bg-black bg-opacity-60">
       <Container>
         <div className="pattern h-[100px] flex items-center justify-between">
           <div className="flex flex-1 items-center">

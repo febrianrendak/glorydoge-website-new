@@ -6,6 +6,7 @@ import ProductsSection from '../components/ProductSection'
 import TokenSection from '../components/TokenSection'
 import RoadmapSection from '../components/RoadmapSection'
 import TeamSection from '../components/TeamSection'
+import NewsBox from '../components/NewsBox'
 import Footer from '../components/Footer'
 
 const IndexPage = () => {
@@ -19,6 +20,7 @@ const IndexPage = () => {
         <RoadmapSection />
         <TeamSection />
       </div>
+      <NewsBox />
       <Footer />
     </>
   )

@@ -5,7 +5,18 @@ import { CashIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
 
-import logoImage from '../images/logo.svg'
+const SocialLink = ({ url, icon }) => {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center justify-center w-8 h-8 bg-black bg-opacity-20 rounded-lg"
+    >
+      <i class={`${icon} leading-[0] text-base`} />
+    </a>
+  )
+}
 
 const NavBar = () => {
   return (
@@ -44,10 +55,10 @@ const NavBar = () => {
               White Paper
             </a>
           </li>
-          <li>
-            <a href="https://github.com/GloryDoge" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+          <li className="flex space-x-2">
+            <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" />
+            <SocialLink icon="bi bi-twitter" url="https://twitter.com/GloryDogeCoin" />
+            <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" />
           </li>
           <li>
             <Link to="/private-sale" className="btn btn-secondary">
