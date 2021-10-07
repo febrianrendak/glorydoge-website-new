@@ -6,6 +6,7 @@ import SectionContainer from './SectionContainer'
 const TeamSection = () => {
   return (
     <SectionContainer
+      id="team"
       title="Team"
       description="A team of highly motivated minds, with years of solid knowledge and experience in Software Engineering, UI/UX Design, and Marketing."
     >

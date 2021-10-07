@@ -30,6 +30,7 @@ const List = ({ number, items = [], className }) => {
 const RoadmapSection = () => {
   return (
     <SectionContainer
+      id="roadmap"
       title="Roadmap"
       description="List of the tasks and steps we plan to take during our successful journey."
     >

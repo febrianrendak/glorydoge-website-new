@@ -28,16 +28,16 @@ const NavBar = () => {
         <ul className="flex items-center text-sm space-x-6">
           <div className="hidden space-x-6 lg:contents">
             <li>
-              <Link to="#">GloryPad</Link>
+              <Link to="/#product">GloryPad</Link>
             </li>
             <li>
-              <Link to="#">Token</Link>
+              <Link to="/#token">Token</Link>
             </li>
             <li>
-              <Link to="#">Roadmap</Link>
+              <Link to="/#roadmap">Roadmap</Link>
             </li>
             <li>
-              <Link to="#">Team</Link>
+              <Link to="/#team">Team</Link>
             </li>
             <li>
               <a href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">

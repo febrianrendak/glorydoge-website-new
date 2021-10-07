@@ -19,6 +19,7 @@ const Feature = ({ header, title, description, link }) => {
 const TokenSection = () => {
   return (
     <SectionContainer
+      id="token"
       title="GLORYD"
       description="The backbone of our projects, and the golden bridge connecting our DAPPs to our inverstors. Backed by a solid economic model."
     >

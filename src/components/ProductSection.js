@@ -25,6 +25,7 @@ const Feature = ({ title, picture, children, reverse = false }) => {
 const ProductsSection = () => {
   return (
     <SectionContainer
+      id="product"
       title="GloryPad"
       description="A next-gen IDO Launchpad where developers, influencers, and investors gather to bring
     creative ideas to life. (Coming soon)"
