@@ -11,15 +11,13 @@ const List = ({ number, items = [], className }) => {
       <div className={`flex flex-col place-self-start relative pl-10`}>
         <div className="w-[2px] absolute bottom-0 left-0 top-0 bg-gradient-to-b rounded from-secondary to-orange" />
         <ul className="space-y-5">
-          {items.map(item => (
-            <>
-              <li className="flex items-center">
-                <div className="w-[20px] h-[20px] flex items-center justify-center mr-3 bg-black bg-opacity-50 border border-secondary border-opacity-100 rounded-full">
-                  {item.done && <div className="w-[16px] h-[16px] bg-secondary rounded-full" />}
-                </div>
-                {item.text}
-              </li>
-            </>
+          {items.map((item, index) => (
+            <li className="flex items-center" key={`${number}-${index}`}>
+              <div className="w-[20px] h-[20px] flex items-center justify-center mr-3 bg-black bg-opacity-50 border border-secondary border-opacity-100 rounded-full">
+                {item.done && <div className="w-[16px] h-[16px] bg-secondary rounded-full" />}
+              </div>
+              {item.text}
+            </li>
           ))}
         </ul>
       </div>

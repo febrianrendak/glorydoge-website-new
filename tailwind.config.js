@@ -18,6 +18,7 @@ module.exports = {
         primary: '#001524',
         secondary: '#1089FF',
         orange: '#ff4a1c',
+        dark: '#0E1D28',
       },
       boxShadow: {
         preview: '0 0 8px 0 rgba(#000, 0.5)',

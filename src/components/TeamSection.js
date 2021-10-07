@@ -11,7 +11,13 @@ const TeamSection = () => {
     >
       <div className="grid gap-x-14 grid-cols-3 mx-auto my-32 w-10/12">
         <div className="flex flex-col items-center">
-          <StaticImage src="../images/joey.png" quality={90} className="w-[150px] mb-4" />
+          <StaticImage
+            src="../images/joey.png"
+            quality={90}
+            className="w-[150px] mb-4"
+            alt=""
+            placeholder="none"
+          />
           <h3 className="text-xl font-bold">Mr. Joey</h3>
           <h3 className="text-gradient text-2xl font-bold">CEO & Lead Dev</h3>
           <p className="mt-4 text-center">
@@ -22,7 +28,13 @@ const TeamSection = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <StaticImage src="../images/william.png" quality={90} className="w-[150px] mb-4" />
+          <StaticImage
+            src="../images/william.png"
+            quality={90}
+            className="w-[150px] mb-4"
+            alt=""
+            placeholder="none"
+          />
           <h3 className="text-xl font-bold">Mr. William</h3>
           <h3 className="text-gradient text-2xl font-bold">Chief Marketing Officer</h3>
           <p className="mt-4 text-center">
@@ -32,7 +44,13 @@ const TeamSection = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <StaticImage src="../images/light.png" quality={90} className="w-[150px] mb-4" />
+          <StaticImage
+            src="../images/light.png"
+            quality={90}
+            className="w-[150px] mb-4"
+            alt=""
+            placeholder="none"
+          />
           <h3 className="text-xl font-bold">Mr. Light</h3>
           <h3 className="text-gradient text-2xl font-bold">Chief Design Officer</h3>
           <p className="mt-4 text-center">

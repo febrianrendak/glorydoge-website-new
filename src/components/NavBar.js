@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { CashIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
@@ -14,10 +15,13 @@ const NavBar = () => {
         <div className="h-full">
           <h1 className="h-full">
             <Link to="/" className="flex items-center h-full font-expletus text-2xl">
-              <div
-                style={{ background: `url(${logoImage}) no-repeat center/contain` }}
-                className="mr-5 w-11 h-full"
-              ></div>
+              <StaticImage
+                src="../images/logo.svg"
+                alt=""
+                className="mr-5 w-11"
+                quality={100}
+                placeholder="none"
+              />
               <span>GloryDoge</span>
             </Link>
           </h1>
