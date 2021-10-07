@@ -19,7 +19,7 @@ const TeamSection = () => {
             placeholder="none"
           />
           <h3 className="text-xl font-bold">Mr. Joey</h3>
-          <h3 className="text-gradient text-2xl font-bold">CEO & Lead Dev</h3>
+          <p className="text-gradient font-bold">CEO & Lead Dev</p>
           <p className="mt-4 text-center">
             Responsible for building, testing, and maintaining code for the contracts and the
             upcoming platforms. Has been working professionally and successfully as a software
@@ -36,7 +36,7 @@ const TeamSection = () => {
             placeholder="none"
           />
           <h3 className="text-xl font-bold">Mr. William</h3>
-          <h3 className="text-gradient text-2xl font-bold">Chief Marketing Officer</h3>
+          <p className="text-gradient font-bold">Chief Marketing Officer</p>
           <p className="mt-4 text-center">
             The marketing guy. Done impressive and extensive research and claims to have the best
             marketing recipe to push us beyond earth's orbit. We can't wait to see that happen!
@@ -52,7 +52,7 @@ const TeamSection = () => {
             placeholder="none"
           />
           <h3 className="text-xl font-bold">Mr. Light</h3>
-          <h3 className="text-gradient text-2xl font-bold">Chief Design Officer</h3>
+          <p className="text-gradient font-bold">Chief Design Officer</p>
           <p className="mt-4 text-center">
             The lead designer. Responsible for making everything we build look like candy to the
             user eyes. His set of skills are one of the best in the market.
