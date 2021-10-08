@@ -50,6 +50,7 @@ const RoadmapSection = () => {
         number="II"
         items={[
           { done: false, text: 'Conduct a successful private sale' },
+          { done: false, text: 'Contract security audit' },
           { done: false, text: 'Extensive marketing on multiple channels' },
           { done: false, text: 'Conduct a successful pre-sale' },
           { done: false, text: 'Official launch & Listing on PancakeSwap' },
@@ -61,9 +62,11 @@ const RoadmapSection = () => {
       <List
         number="III"
         items={[
+          { done: false, text: 'GloryPad security audit' },
           { done: false, text: 'Finalize and release GloryPad to the market' },
           { done: false, text: 'Extensive marketing and user base building' },
           { done: false, text: 'Hire more team members' },
+          { done: false, text: 'Automate DAPPs revenu distribution to holders' },
           { done: false, text: 'Kick off the development of new features and DAPPs' },
         ]}
       />
