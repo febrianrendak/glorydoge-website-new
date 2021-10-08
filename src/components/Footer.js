@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="mt-32 w-full bg-black bg-opacity-60">
       <Container>
-        <div className="pattern lg:h-[100px] flex flex-col items-center justify-between py-10 space-y-10 lg:flex-row lg:py-0 lg:space-y-0">
+        <div className="pattern lg:h-[100px] flex flex-col items-center justify-between py-10 space-y-4 lg:flex-row lg:py-0 lg:space-y-0">
           <div className="flex flex-1 items-center">
             <h1 className="font-expletus text-2xl font-bold">GloryDoge</h1>
           </div>
