@@ -8,10 +8,12 @@ import RoadmapSection from '../components/RoadmapSection'
 import TeamSection from '../components/TeamSection'
 import NewsBox from '../components/NewsBox'
 import Footer from '../components/Footer'
+import SEO from '../components/seo'
 
 const IndexPage = () => {
   return (
     <>
+      <SEO />
       <NavBar />
       <Hero />
       <div className="space-y-20">

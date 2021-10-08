@@ -2,6 +2,12 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
     title: 'GloryDoge',
+    titleTemplate: '%s · Blockchain platforms & tools to kickstart ideas',
+    description:
+      "Building a secure DeFi ecosystem to help bring creative ideas to life and protect early investors' funds.",
+    url: 'https://glorydogecoin.com',
+    image: '/images/glorydoge.png',
+    twitterUsername: '@GloryDogeCoin',
   },
   plugins: [
     'gatsby-plugin-postcss',

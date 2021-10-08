@@ -26,7 +26,7 @@ const NavBar = () => {
           </h1>
         </div>
         <ul className="flex items-center text-sm space-x-6">
-          <div className="hidden space-x-6 lg:contents">
+          <ul className="hidden space-x-6 lg:contents">
             <li>
               <Link to="/#product">GloryPad</Link>
             </li>
@@ -44,11 +44,15 @@ const NavBar = () => {
                 White Paper
               </a>
             </li>
-          </div>
+          </ul>
           <li className="hidden space-x-2 sm:flex">
-            <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" />
-            <SocialLink icon="bi bi-twitter" url="https://twitter.com/GloryDogeCoin" />
-            <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" />
+            <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" label="GitHub" />
+            <SocialLink
+              icon="bi bi-twitter"
+              url="https://twitter.com/GloryDogeCoin"
+              label="Twitter"
+            />
+            <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" label="Telegram" />
           </li>
           <li className="hidden sm:block">
             <Link to="/private-sale" className="btn btn-secondary">
