@@ -16,7 +16,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-1 justify-end">
-            <p className="text-gradient text-sm">Made with love in Sweden.</p>
+            <a href="mailto:hello@glorydogecoin.com" className="text-gradient text-sm">
+              hello@glorydogecoin.com
+            </a>
           </div>
         </div>
       </Container>

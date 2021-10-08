@@ -19,8 +19,9 @@ const TeamSection = () => {
             alt=""
             placeholder="none"
           />
-          <h3 className="text-xl font-bold">@GloryDogeMarketer</h3>
+          <h3 className="text-xl font-bold">William</h3>
           <p className="text-gradient font-bold">Chief Marketing Officer</p>
+          <p className="text-sm font-bold">(@GloryDogeMarketer)</p>
           <p className="mt-4 text-center">
             The marketing guy. Done impressive and extensive research and claims to have the best
             marketing recipe to push us beyond earth's orbit. We can't wait to see that happen!
@@ -35,8 +36,9 @@ const TeamSection = () => {
             alt=""
             placeholder="none"
           />
-          <h3 className="text-xl font-bold">@GloryDogeDev</h3>
+          <h3 className="text-xl font-bold">Joey</h3>
           <p className="text-gradient font-bold">CEO & Lead Dev</p>
+          <p className="text-sm font-bold">(@GloryDogeDev)</p>
           <p className="mt-4 text-center">
             Responsible for building, testing, and maintaining code for the contracts and the
             upcoming platforms. Been through a successful career as a software engineer since 2014.
@@ -51,8 +53,9 @@ const TeamSection = () => {
             alt=""
             placeholder="none"
           />
-          <h3 className="text-xl font-bold">@GloryDogeDesigner</h3>
+          <h3 className="text-xl font-bold">Light</h3>
           <p className="text-gradient font-bold">Chief Design Officer</p>
+          <p className="text-sm font-bold">(@GloryDogeDesigner)</p>
           <p className="mt-4 text-center">
             The lead designer. Responsible for making everything we build look like candy to the
             user eyes. His set of skills are one of the best in the market.

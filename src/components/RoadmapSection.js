@@ -62,6 +62,7 @@ const RoadmapSection = () => {
       <List
         number="III"
         items={[
+          { done: false, text: 'Team identity reveal (Doxxing)' },
           { done: false, text: 'GloryPad security audit' },
           { done: false, text: 'Finalize and release GloryPad to the market' },
           { done: false, text: 'Extensive marketing and user base building' },
