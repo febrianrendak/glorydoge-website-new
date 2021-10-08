@@ -26,25 +26,27 @@ const NavBar = () => {
           </h1>
         </div>
         <ul className="flex items-center text-sm space-x-6">
-          <ul className="hidden space-x-6 lg:contents">
-            <li>
-              <Link to="/#product">GloryPad</Link>
-            </li>
-            <li>
-              <Link to="/#token">Token</Link>
-            </li>
-            <li>
-              <Link to="/#roadmap">Roadmap</Link>
-            </li>
-            <li>
-              <Link to="/#team">Team</Link>
-            </li>
-            <li>
-              <a href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
-                White Paper
-              </a>
-            </li>
-          </ul>
+          <li className="hidden lg:contents">
+            <ul className="contents space-x-6">
+              <li>
+                <Link to="/#product">GloryPad</Link>
+              </li>
+              <li>
+                <Link to="/#token">Token</Link>
+              </li>
+              <li>
+                <Link to="/#roadmap">Roadmap</Link>
+              </li>
+              <li>
+                <Link to="/#team">Team</Link>
+              </li>
+              <li>
+                <a href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
+                  White Paper
+                </a>
+              </li>
+            </ul>
+          </li>
           <li className="hidden space-x-2 sm:flex">
             <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" label="GitHub" />
             <SocialLink

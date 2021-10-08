@@ -11,9 +11,9 @@ const Hero = () => {
   return (
     <Container className="flex flex-col my-16 lg:flex-row lg:my-28">
       <div className="top-[90px] absolute left-0 right-0 flex justify-center space-x-2 sm:hidden">
-        <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" />
-        <SocialLink icon="bi bi-twitter" url="https://twitter.com/GloryDogeCoin" />
-        <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" />
+        <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" label="GitHub" />
+        <SocialLink icon="bi bi-twitter" url="https://twitter.com/GloryDogeCoin" label="Twitter" />
+        <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" label="Telegram" />
       </div>
       <div className="flex flex-col items-center justify-center text-center box-border space-y-8 sm:space-y-6 lg:items-start lg:w-5/12 lg:text-left">
         <h1 className="text-gradient lg:w-[430px] xl:w-[530px] text-2xl font-bold leading-normal sm:text-5xl sm:leading-tight xl:text-6xl xl:leading-snug">
