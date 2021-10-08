@@ -40,4 +40,8 @@
   .text-gradient {
     @apply text-transparent bg-gradient-to-r bg-clip-text from-secondary to-orange;
   }
+
+  .line-height-normal {
+    line-height: normal !important;
+  }
 }
