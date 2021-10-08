@@ -23,8 +23,7 @@ const TeamSection = () => {
           <p className="text-gradient font-bold">CEO & Lead Dev</p>
           <p className="mt-4 text-center">
             Responsible for building, testing, and maintaining code for the contracts and the
-            upcoming platforms. Has been working professionally and successfully as a software
-            engineer since 2014.
+            upcoming platforms. Been through a successful career as a software engineer since 2014.
           </p>
         </div>
 
