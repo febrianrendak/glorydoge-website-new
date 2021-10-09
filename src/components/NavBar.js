@@ -5,8 +5,9 @@ import { CashIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
 import SocialLink from './SocialLink'
+import WalletBar from './WalletBar'
 
-const NavBar = () => {
+const NavBar = ({ location }) => {
   return (
     <div className="sticky z-50 top-0 w-full h-20 bg-primary border-b border-gray-800 border-opacity-30">
       <div className="absolute bottom-0 w-full h-px bg-black bg-opacity-30"></div>
@@ -25,44 +26,48 @@ const NavBar = () => {
             </Link>
           </h1>
         </div>
-        <ul className="flex items-center text-sm space-x-6">
-          <li className="hidden lg:contents">
-            <ul className="contents space-x-6">
-              <li>
-                <Link to="/#product">GloryPad</Link>
-              </li>
-              <li>
-                <Link to="/#token">Token</Link>
-              </li>
-              <li>
-                <Link to="/#roadmap">Roadmap</Link>
-              </li>
-              <li>
-                <Link to="/#team">Team</Link>
-              </li>
-              <li>
-                <a href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
-                  White Paper
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="hidden space-x-2 sm:flex">
-            <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" label="GitHub" />
-            <SocialLink
-              icon="bi bi-twitter"
-              url="https://twitter.com/GloryDogeCoin"
-              label="Twitter"
-            />
-            <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" label="Telegram" />
-          </li>
-          <li className="hidden sm:block">
-            <Link to="/private-sale" className="btn btn-secondary">
-              <CashIcon className="btn-icon" />
-              <span className="btn-text">Buy GLORYD</span>
-            </Link>
-          </li>
-        </ul>
+        {!location || location.pathname === '/' ? (
+          <ul className="flex items-center text-sm space-x-6">
+            <li className="hidden lg:contents">
+              <ul className="contents space-x-6">
+                <li>
+                  <Link to="/#product">GloryPad</Link>
+                </li>
+                <li>
+                  <Link to="/#token">Token</Link>
+                </li>
+                <li>
+                  <Link to="/#roadmap">Roadmap</Link>
+                </li>
+                <li>
+                  <Link to="/#team">Team</Link>
+                </li>
+                <li>
+                  <a href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
+                    White Paper
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="hidden space-x-2 sm:flex">
+              <SocialLink icon="bi bi-github" url="https://github.com/GloryDoge" label="GitHub" />
+              <SocialLink
+                icon="bi bi-twitter"
+                url="https://twitter.com/GloryDogeCoin"
+                label="Twitter"
+              />
+              <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" label="Telegram" />
+            </li>
+            <li className="hidden sm:block">
+              <Link to="/private-sale" className="btn btn-secondary">
+                <CashIcon className="btn-icon" />
+                <span className="btn-text">Buy GLORYD</span>
+              </Link>
+            </li>
+          </ul>
+        ) : typeof window !== 'undefined' ? (
+          <WalletBar />
+        ) : null}
       </Container>
     </div>
   )

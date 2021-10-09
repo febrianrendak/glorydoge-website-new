@@ -2,10 +2,10 @@ import * as React from 'react'
 
 import NavBar from '../components/NavBar'
 
-const PrivateSalePage = () => {
+const PrivateSalePage = ({ location }) => {
   return (
     <>
-      <NavBar />
+      <NavBar location={location} />
       <div className="flex items-center justify-center mt-60 px-10 w-full">
         <h1 className="text-gradient text-4xl font-bold leading-normal">
           Private sale will begin soon. <br />
