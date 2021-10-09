@@ -32,7 +32,7 @@ const RoadmapSection = () => {
     <SectionContainer
       id="roadmap"
       title="Roadmap"
-      description="List of the tasks and steps we plan to take during our successful journey."
+      description="List of tasks and steps we plan to take during our successful journey."
     >
       <List
         number="I"

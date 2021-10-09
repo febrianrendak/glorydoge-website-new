@@ -38,8 +38,8 @@ const ProductsSection = () => {
           }
         >
           <p>
-            Got an awesome crypto project idea? GloryPad helps Founders raise the initial funds and
-            pave the way to success.
+            Got an awesome crypto project idea? GloryPad helps Founders raise funds and pave the way
+            to success.
           </p>
           <p>
             GloryPad is also the best place for investors to take part in great opportunities and
@@ -54,8 +54,7 @@ const ProductsSection = () => {
         >
           <p>
             It's not just about raising funds. It's about how they will be used. Automatically pay
-            for services your project needs by defining tasks that investors can fund. If a task is
-            canceled, or the sale soft cap is not met, investors will be refunded.
+            for services your project needs by defining tasks that investors can fund.
           </p>
           <p>
             The more tasks added, the more trust you gain from investor, and the more they will help
