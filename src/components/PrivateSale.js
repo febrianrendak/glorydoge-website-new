@@ -12,7 +12,7 @@ const ProgressBar = ({ totalContributions = 0, privateSaleCap = 0 }) => {
   return (
     <div className="relative w-full h-4 bg-white bg-opacity-10 rounded-lg overflow-hidden">
       <div
-        className={`absolute bottom-0 left-0 top-0 bg-secondary rounded-bl-lg rounded-tl-lg transition`}
+        className={`absolute bottom-0 left-0 top-0 from-[#8A2387] via-[#E94057] to-[#F27121] bg-gradient-to-r rounded-bl-lg rounded-tl-lg transition`}
         style={{ width: `${progress || 0}%` }}
       />
     </div>
@@ -35,14 +35,12 @@ const PrivateSale = ({ location }) => {
     <>
       <NavBar location={location} />
       <Container className="flex flex-col items-center px-1 py-6 space-y-8">
-        <h1 className="text-gradient font-expletus text-2xl font-bold leading-relaxed sm:text-4xl">
-          GloryDoge private sale
-        </h1>
+        <h1 className="text-2xl font-bold leading-relaxed sm:text-4xl">GloryDoge private sale</h1>
 
         <WalletBar className="text-sm sm:hidden" />
 
         <div className="sm:w-[460px] flex flex-col items-center w-full bg-white bg-opacity-10 rounded-lg shadow-md overflow-hidden">
-          <div className="flex flex-col items-center p-5 space-y-4">
+          <div className="flex flex-col items-center p-5 w-full bg-gradient-to-r space-y-4">
             {privateSaleData && (
               <>
                 <p className="text-2xl font-bold">
@@ -89,9 +87,9 @@ const PrivateSale = ({ location }) => {
                 {!privateSaleData.privateSaleOpen && (
                   <p className="text-center text-orange">Private sale is closed for now</p>
                 )}
-                <div className="flex flex-col bg-secondary bg-opacity-40 rounded overflow-hidden focus-within:ring-1">
+                <div className="from-[#8A2387] via-[#E94057] to-[#F27121] ring-[#E94057] ring-offset-[#1A2D3A] flex flex-col bg-gradient-to-r rounded overflow-hidden focus-within:ring-2 ring-offset-2">
                   <p className="flex-1 px-4 py-2">Amount to contribute</p>
-                  <div className="h-[50px] flex items-center w-full text-gray-800 text-base bg-white sm:text-xl">
+                  <div className="h-[50px] bg-[#0F1921] flex items-center w-full text-white text-base sm:text-xl">
                     <input
                       placeholder="0.0"
                       type="number"
@@ -168,7 +166,7 @@ const PrivateSale = ({ location }) => {
                 </button>
 
                 {!privateSaleData.claimOpen && (
-                  <p className="text-center text-orange text-sm">
+                  <p className="text-center text-secondary text-sm">
                     You can claim your tokens right after PancakeSwap launch
                   </p>
                 )}
