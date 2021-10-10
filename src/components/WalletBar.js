@@ -3,6 +3,8 @@ import { useContext } from 'react'
 
 import { GlobalDispatchContext, GlobalStateContext } from './ContextProvider'
 
+const CHAIN_ID = 4
+
 const WalletBarInfo = ({ children }) => {
   return (
     <div className="px-4 py-2 bg-black bg-opacity-30 border border-opacity-5 rounded-lg">
@@ -22,7 +24,7 @@ const WalletBar = () => {
       </button>
     )
 
-  if (chain !== 4) {
+  if (chain !== CHAIN_ID) {
     return (
       <div className="px-4 py-2 bg-orange bg-opacity-30 border border-orange border-opacity-60 rounded-lg">
         <p>Wrong network! Please switch to BSC.</p>

@@ -20,8 +20,16 @@ const ProgressBar = ({ totalContributions = 0, privateSaleCap = 0 }) => {
 }
 
 const PrivateSale = ({ location }) => {
-  const { privateSaleData, connectionError } = useContext(GlobalStateContext)
+  const { privateSaleData, connectionError, account, sending, claiming } =
+    useContext(GlobalStateContext)
+  const { contribute, claimTokens } = useContext(GlobalDispatchContext)
   const [contribution, setContribution] = useState(0)
+
+  const onContribute = () => {
+    contribute(account, contribution)
+  }
+
+  const onClaimTokens = () => claimTokens(account)
 
   return (
     <>
@@ -75,6 +83,7 @@ const PrivateSale = ({ location }) => {
           <div className="flex flex-1 flex-col p-5 w-full space-y-5">
             {privateSaleData && (
               <>
+                {sending && <p className="text-center text-secondary">{sending}</p>}
                 {!privateSaleData.privateSaleOpen && (
                   <p className="text-center text-orange">Private sale will start shortly</p>
                 )}
@@ -112,14 +121,18 @@ const PrivateSale = ({ location }) => {
                     Number(contribution) === 0 ||
                     contribution < 0.1 ||
                     contribution > 3 ||
-                    !privateSaleData.privateSaleOpen
+                    !privateSaleData.privateSaleOpen ||
+                    sending
                   }
+                  onClick={onContribute}
                 >
                   Contribute
                 </button>
 
+                {claiming && <p className="text-center text-secondary">{claiming}</p>}
+
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
-                  <p className="flex-1 px-4 py-2">Your total contributon & balance</p>
+                  <p className="flex-1 px-4 py-2">Your contribution & balance</p>
                   <div className="h-[50px] flex items-center w-full text-xl bg-black bg-opacity-20">
                     <input
                       placeholder="0.0"
@@ -144,7 +157,10 @@ const PrivateSale = ({ location }) => {
 
                 <button
                   className="btn flex justify-center disabled:opacity-40 disabled:pointer-events-none"
-                  disabled={!privateSaleData.claimOpen}
+                  disabled={
+                    !privateSaleData.claimOpen || privateSaleData.contribution === 0 || claiming
+                  }
+                  onClick={onClaimTokens}
                 >
                   Claim tokens
                 </button>

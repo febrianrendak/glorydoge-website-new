@@ -6,6 +6,9 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 
 import abi from '../abi/GloryDogePrivateSale.json'
 
+const CONTRACT_ADDRESS = '0x7a6f4EBB2ADaB5670777845dA639C4242982F2c9'
+const CHAIN_ID = 4
+
 const providerOptions =
   typeof window !== undefined
     ? {
@@ -38,6 +41,8 @@ const initialState = {
   balance: null,
   privateSaleData: null,
   connectionError: false,
+  sending: '',
+  claiming: '',
 }
 
 const reducer = (state, action) => {
@@ -70,6 +75,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         connectionError: action.value,
+      }
+
+    case 'SET_SENDING':
+      return {
+        ...state,
+        sending: action.value,
+      }
+
+    case 'SET_CLAIMING':
+      return {
+        ...state,
+        claiming: action.value,
       }
 
     default:
@@ -123,11 +140,14 @@ const ContextProvider = ({ children }) => {
     }
   }, [])
 
-  const listenToContractEvent = account => {
-    if (!contract.current) return
+  const listenToContractEvent = useCallback(
+    account => {
+      if (!contract.current) return
 
-    contract.current.events.allEvents(() => fetchDataFromContract(account))
-  }
+      contract.current.events.allEvents(() => fetchDataFromContract(account))
+    },
+    [fetchDataFromContract]
+  )
 
   const setProviderEvents = useCallback(
     newProvider => {
@@ -143,7 +163,7 @@ const ContextProvider = ({ children }) => {
         fetchDataFromContract(account)
       })
     },
-    [getBalance]
+    [getBalance, fetchDataFromContract]
   )
 
   const connectWallet = useCallback(async () => {
@@ -154,13 +174,10 @@ const ContextProvider = ({ children }) => {
       const chainId = provider.current.chainId
       const account = provider.current.selectedAddress || provider.current.accounts[0]
 
-      if (provider.current instanceof WalletConnectProvider && Number(chainId) !== 4)
+      if (provider.current instanceof WalletConnectProvider && Number(chainId) !== CHAIN_ID)
         throw new Error('Wrong network')
 
-      contract.current = new web3.current.eth.Contract(
-        abi,
-        '0x7a6f4EBB2ADaB5670777845dA639C4242982F2c9'
-      )
+      contract.current = new web3.current.eth.Contract(abi, CONTRACT_ADDRESS)
 
       setProviderEvents(provider.current)
       dispatch({ type: 'SET_CHAIN', value: Number(chainId) })
@@ -174,7 +191,80 @@ const ContextProvider = ({ children }) => {
       web3Modal.clearCachedProvider()
       dispatch({ type: 'SET_CONNECTION_ERROR', value: true })
     }
-  }, [getBalance, setProviderEvents])
+  }, [getBalance, setProviderEvents, fetchDataFromContract, listenToContractEvent])
+
+  const contribute = (from, amount) => {
+    try {
+      web3.current.eth
+        .sendTransaction({
+          from,
+          to: CONTRACT_ADDRESS,
+          value: web3.current.utils.toWei(amount),
+        })
+        .once('sent', () => {
+          dispatch({ type: 'SET_SENDING', value: 'Please confirm on your wallet...' })
+        })
+        .once('transactionHash', () => {
+          dispatch({ type: 'SET_SENDING', value: 'Receiving your contribution...' })
+        })
+        .once('receipt', () => {
+          dispatch({ type: 'SET_SENDING', value: 'Contribution successful!' })
+
+          setTimeout(() => {
+            dispatch({ type: 'SET_SENDING', value: '' })
+          }, 2000)
+        })
+        .on('error', () => {
+          dispatch({ type: 'SET_SENDING', value: 'Contribution failed. Please try again...' })
+
+          setTimeout(() => {
+            dispatch({ type: 'SET_SENDING', value: '' })
+          }, 2000)
+        })
+    } catch (error) {
+      console.error(error)
+      dispatch({ type: 'SET_SENDING', value: 'Contribution failed. Please try again...' })
+      setTimeout(() => {
+        dispatch({ type: 'SET_SENDING', value: '' })
+      }, 2000)
+    }
+  }
+
+  const claimTokens = from => {
+    try {
+      contract.current.methods
+        .claimTokens()
+        .send({
+          from,
+        })
+        .once('sent', () => {
+          dispatch({ type: 'SET_CLAIMING', value: 'Please confirm on your wallet...' })
+        })
+        .once('transactionHash', () => {
+          dispatch({ type: 'SET_SENDING', value: 'Claiming your tokens...' })
+        })
+        .once('receipt', () => {
+          dispatch({ type: 'SET_CLAIMING', value: 'Tokens claimed!' })
+
+          setTimeout(() => {
+            dispatch({ type: 'SET_CLAIMING', value: '' })
+          }, 2000)
+        })
+        .on('error', () => {
+          dispatch({ type: 'SET_SENDING', value: 'Claiming failed. Please try again...' })
+
+          setTimeout(() => {
+            dispatch({ type: 'SET_CLAIMING', value: '' })
+          }, 2000)
+        })
+    } catch (error) {
+      console.error(error)
+      dispatch({ type: 'SET_SENDING', value: 'Claiming failed. Please try again...' })
+      setTimeout(() => {
+        dispatch({ type: 'SET_CLAIMING', value: '' })
+      }, 2000)
+    }
+  }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -186,7 +276,7 @@ const ContextProvider = ({ children }) => {
   if (typeof window === 'undefined') return <>{children}</>
 
   return (
-    <GlobalDispatchContext.Provider value={{ dispatch, connectWallet }}>
+    <GlobalDispatchContext.Provider value={{ dispatch, connectWallet, contribute, claimTokens }}>
       <GlobalStateContext.Provider value={state}>{children}</GlobalStateContext.Provider>
     </GlobalDispatchContext.Provider>
   )
