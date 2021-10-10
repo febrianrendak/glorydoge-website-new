@@ -89,9 +89,9 @@ const PrivateSale = ({ location }) => {
                 {!privateSaleData.privateSaleOpen && (
                   <p className="text-center text-orange">Private sale is closed for now</p>
                 )}
-                <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
+                <div className="flex flex-col bg-secondary bg-opacity-40 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">Amount to contribute</p>
-                  <div className="h-[50px] flex items-center w-full text-base bg-secondary bg-opacity-20 sm:text-xl">
+                  <div className="h-[50px] flex items-center w-full text-gray-800 text-base bg-white sm:text-xl">
                     <input
                       placeholder="0.0"
                       type="number"
@@ -106,7 +106,7 @@ const PrivateSale = ({ location }) => {
 
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">You will get</p>
-                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-20 sm:text-xl">
+                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-30 sm:text-xl">
                     <input
                       placeholder="0.0"
                       className="px-4 w-full h-full bg-transparent outline-none"
@@ -135,7 +135,7 @@ const PrivateSale = ({ location }) => {
 
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">Your contribution & balance</p>
-                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-20 sm:text-xl">
+                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-30 sm:text-xl">
                     <input
                       placeholder="0.0"
                       className="px-4 w-full h-full bg-transparent outline-none"
@@ -144,7 +144,7 @@ const PrivateSale = ({ location }) => {
                     />
                     <p className="pl-0 px-4 py-2">BNB</p>
                   </div>
-                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-20 sm:text-xl">
+                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-30 sm:text-xl">
                     <input
                       placeholder="0.0"
                       className="px-4 w-full h-full bg-transparent outline-none"
