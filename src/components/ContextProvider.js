@@ -6,7 +6,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 
 import abi from '../abi/GloryDogePrivateSale.json'
 
-const CONTRACT_ADDRESS = '0x90Fb2Ca080cf8eC22FAd06b52e919a51613113e1'
+const CONTRACT_ADDRESS = '0x544573d1EA9974547F1814d12cF71469fFEE10AD'
 const CHAIN_ID = 4
 
 const providerOptions =
@@ -152,6 +152,7 @@ const ContextProvider = ({ children }) => {
   const setProviderEvents = useCallback(
     newProvider => {
       newProvider.on('accountsChanged', accounts => {
+        getBalance(accounts[0])
         dispatch({ type: 'SET_ACCOUNT', value: accounts[0] || null })
         fetchDataFromContract(accounts[0])
       })

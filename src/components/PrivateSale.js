@@ -9,8 +9,13 @@ import { GlobalDispatchContext, GlobalStateContext } from './ContextProvider'
 const ProgressBar = ({ totalContributions = 0, privateSaleCap = 0 }) => {
   const progress = (totalContributions * 100) / privateSaleCap
 
+  console.log(progress, totalContributions, privateSaleCap)
+  console.log(progress, totalContributions, privateSaleCap)
+  console.log(progress, totalContributions, privateSaleCap)
+  console.log(progress, totalContributions, privateSaleCap)
+
   return (
-    <div className="relative w-full h-4 bg-white bg-opacity-10 rounded-lg">
+    <div className="relative w-full h-4 bg-white bg-opacity-10 rounded-lg overflow-hidden">
       <div
         className={`absolute bottom-0 left-0 top-0 bg-secondary rounded-bl-lg rounded-tl-lg transition`}
         style={{ width: `${progress || 0}%` }}
@@ -62,7 +67,7 @@ const PrivateSale = ({ location }) => {
                   <p>{privateSaleData.totalContributors} Contributors</p>
                 </div>
                 <ProgressBar
-                  totalContributions={privateSaleData.totalContributors}
+                  totalContributions={privateSaleData.totalContributions}
                   privateSaleCap={privateSaleData.privateSaleCap}
                 />
                 <div className="py-2 w-full">
