@@ -41,7 +41,7 @@ const PrivateSale = ({ location }) => {
 
         <div className="sm:w-[460px] flex flex-col items-center w-full bg-white bg-opacity-10 rounded-lg shadow-md overflow-hidden">
           <div className="flex flex-col items-center p-5 w-full bg-gradient-to-r space-y-4">
-            {privateSaleData && (
+            {privateSaleData && account && (
               <>
                 <p className="text-2xl font-bold">
                   {privateSaleData.totalContributions} / {privateSaleData.privateSaleCap} BNB
@@ -54,7 +54,7 @@ const PrivateSale = ({ location }) => {
             )}
           </div>
           <div className="min-h-[124px] flex flex-col items-center justify-center p-5 w-full bg-black bg-opacity-30">
-            {privateSaleData ? (
+            {privateSaleData && account ? (
               <>
                 <div className="py-2 w-full">
                   <p>{privateSaleData.totalContributors} Contributors</p>
@@ -81,7 +81,7 @@ const PrivateSale = ({ location }) => {
             )}
           </div>
           <div className="flex flex-1 flex-col p-5 w-full space-y-5">
-            {privateSaleData && (
+            {privateSaleData && account && (
               <>
                 {sending && <p className="text-center text-secondary">{sending}</p>}
                 {!privateSaleData.privateSaleOpen && (

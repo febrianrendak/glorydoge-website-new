@@ -3,7 +3,7 @@ import { useContext } from 'react'
 
 import { GlobalDispatchContext, GlobalStateContext } from './ContextProvider'
 
-const CHAIN_ID = 56
+const CHAIN_ID = [1, 56]
 
 const WalletBarInfo = ({ children }) => {
   return (
@@ -24,7 +24,7 @@ const WalletBar = ({ className }) => {
       </button>
     )
 
-  if (chain !== CHAIN_ID) {
+  if (!CHAIN_ID.includes(chain)) {
     return (
       <div
         className={`px-4 py-2 bg-orange bg-opacity-30 border border-orange border-opacity-60 rounded-lg ${className}`}

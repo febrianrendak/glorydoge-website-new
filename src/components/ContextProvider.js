@@ -7,7 +7,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 import abi from '../abi/GloryDogePrivateSale.json'
 
 const CONTRACT_ADDRESS = '0x5583B2Bc7D5DF910d6c237aB7D4764d07CC99C90'
-const CHAIN_ID = 56
+const CHAIN_ID = [56, 1]
 
 const providerOptions =
   typeof window !== undefined
@@ -16,6 +16,7 @@ const providerOptions =
           package: WalletConnectProvider,
           options: {
             rpc: {
+              1: 'https://bsc-dataseed1.binance.org',
               56: 'https://bsc-dataseed1.binance.org',
             },
           },
@@ -89,6 +90,11 @@ const reducer = (state, action) => {
         claiming: action.value,
       }
 
+    case 'RESET':
+      return {
+        ...initialState,
+      }
+
     default:
       throw new Error('Invalid action type')
   }
@@ -152,6 +158,10 @@ const ContextProvider = ({ children }) => {
   const setProviderEvents = useCallback(
     newProvider => {
       newProvider.on('accountsChanged', accounts => {
+        if (accounts.length === 0) {
+          web3Modal.clearCachedProvider()
+          return dispatch({ type: 'RESET' })
+        }
         getBalance(accounts[0])
         dispatch({ type: 'SET_ACCOUNT', value: accounts[0] || null })
         fetchDataFromContract(accounts[0])
@@ -162,6 +172,11 @@ const ContextProvider = ({ children }) => {
         getBalance(account)
         dispatch({ type: 'SET_CHAIN', value: Number(chainId) })
         fetchDataFromContract(account)
+      })
+
+      newProvider.on('disconnect', () => {
+        web3Modal.clearCachedProvider()
+        dispatch({ type: 'RESET' })
       })
     },
     [getBalance, fetchDataFromContract]
@@ -175,7 +190,7 @@ const ContextProvider = ({ children }) => {
       const chainId = provider.current.chainId
       const account = provider.current.selectedAddress || provider.current.accounts[0]
 
-      if (provider.current instanceof WalletConnectProvider && Number(chainId) !== CHAIN_ID)
+      if (provider.current instanceof WalletConnectProvider && !CHAIN_ID.includes(Number(chainId)))
         throw new Error('Wrong network')
 
       contract.current = new web3.current.eth.Contract(abi, CONTRACT_ADDRESS)
