@@ -22,6 +22,14 @@ const WalletBar = () => {
       </button>
     )
 
+  if (chain !== 4) {
+    return (
+      <div className="px-4 py-2 bg-orange bg-opacity-30 border border-orange border-opacity-60 rounded-lg">
+        <p>Wrong network! Please switch to BSC.</p>
+      </div>
+    )
+  }
+
   return (
     <div className="flex space-x-3">
       <WalletBarInfo>BSC</WalletBarInfo>
