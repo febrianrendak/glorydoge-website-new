@@ -9,11 +9,6 @@ import { GlobalDispatchContext, GlobalStateContext } from './ContextProvider'
 const ProgressBar = ({ totalContributions = 0, privateSaleCap = 0 }) => {
   const progress = (totalContributions * 100) / privateSaleCap
 
-  console.log(progress, totalContributions, privateSaleCap)
-  console.log(progress, totalContributions, privateSaleCap)
-  console.log(progress, totalContributions, privateSaleCap)
-  console.log(progress, totalContributions, privateSaleCap)
-
   return (
     <div className="relative w-full h-4 bg-white bg-opacity-10 rounded-lg overflow-hidden">
       <div
@@ -44,7 +39,7 @@ const PrivateSale = ({ location }) => {
           GloryDoge private sale
         </h1>
 
-        <WalletBar className="text-sm space-x-1" />
+        <WalletBar className="text-sm sm:hidden" />
 
         <div className="sm:w-[460px] flex flex-col items-center w-full bg-white bg-opacity-10 rounded-lg shadow-md overflow-hidden">
           <div className="flex flex-col items-center p-5 space-y-4">
@@ -92,7 +87,7 @@ const PrivateSale = ({ location }) => {
               <>
                 {sending && <p className="text-center text-secondary">{sending}</p>}
                 {!privateSaleData.privateSaleOpen && (
-                  <p className="text-center text-orange">Private sale will start shortly</p>
+                  <p className="text-center text-orange">Private sale is closed for now</p>
                 )}
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">Amount to contribute</p>

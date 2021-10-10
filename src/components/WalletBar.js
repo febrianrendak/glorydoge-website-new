@@ -35,7 +35,7 @@ const WalletBar = ({ className }) => {
   }
 
   return (
-    <div className={`flex space-x-3 ${className}`}>
+    <div className={`flex space-x-1 sm:space-x-3 ${className}`}>
       <WalletBarInfo>BSC</WalletBarInfo>
       <WalletBarInfo>{balance} BNB</WalletBarInfo>
       <WalletBarInfo>
