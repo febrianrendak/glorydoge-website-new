@@ -3,7 +3,7 @@ import { useContext } from 'react'
 
 import { GlobalDispatchContext, GlobalStateContext } from './ContextProvider'
 
-const CHAIN_ID = 4
+const CHAIN_ID = 56
 
 const WalletBarInfo = ({ children }) => {
   return (
