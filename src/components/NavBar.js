@@ -66,7 +66,7 @@ const NavBar = ({ location }) => {
             </li>
           </ul>
         ) : typeof window !== 'undefined' ? (
-          <WalletBar />
+          <WalletBar className="hidden sm:flex" />
         ) : null}
       </Container>
     </div>

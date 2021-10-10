@@ -13,27 +13,29 @@ const WalletBarInfo = ({ children }) => {
   )
 }
 
-const WalletBar = () => {
+const WalletBar = ({ className }) => {
   const { connectWallet } = useContext(GlobalDispatchContext)
   const { chain, account, balance } = useContext(GlobalStateContext)
 
   if (!account)
     return (
-      <button className="btn btn-secondary" onClick={connectWallet}>
+      <button className={`btn btn-secondary ${className}`} onClick={connectWallet}>
         <span className="btn-text">Connect wallet</span>
       </button>
     )
 
   if (chain !== CHAIN_ID) {
     return (
-      <div className="px-4 py-2 bg-orange bg-opacity-30 border border-orange border-opacity-60 rounded-lg">
+      <div
+        className={`px-4 py-2 bg-orange bg-opacity-30 border border-orange border-opacity-60 rounded-lg ${className}`}
+      >
         <p>Wrong network! Please switch to BSC.</p>
       </div>
     )
   }
 
   return (
-    <div className="flex space-x-3">
+    <div className={`flex space-x-3 ${className}`}>
       <WalletBarInfo>BSC</WalletBarInfo>
       <WalletBarInfo>{balance} BNB</WalletBarInfo>
       <WalletBarInfo>

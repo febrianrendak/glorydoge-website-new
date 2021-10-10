@@ -6,7 +6,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 
 import abi from '../abi/GloryDogePrivateSale.json'
 
-const CONTRACT_ADDRESS = '0x7a6f4EBB2ADaB5670777845dA639C4242982F2c9'
+const CONTRACT_ADDRESS = '0x90Fb2Ca080cf8eC22FAd06b52e919a51613113e1'
 const CHAIN_ID = 4
 
 const providerOptions =
@@ -241,7 +241,7 @@ const ContextProvider = ({ children }) => {
           dispatch({ type: 'SET_CLAIMING', value: 'Please confirm on your wallet...' })
         })
         .once('transactionHash', () => {
-          dispatch({ type: 'SET_SENDING', value: 'Claiming your tokens...' })
+          dispatch({ type: 'SET_CLAIMING', value: 'Claiming your tokens...' })
         })
         .once('receipt', () => {
           dispatch({ type: 'SET_CLAIMING', value: 'Tokens claimed!' })
@@ -251,7 +251,7 @@ const ContextProvider = ({ children }) => {
           }, 2000)
         })
         .on('error', () => {
-          dispatch({ type: 'SET_SENDING', value: 'Claiming failed. Please try again...' })
+          dispatch({ type: 'SET_CLAIMING', value: 'Claiming failed. Please try again...' })
 
           setTimeout(() => {
             dispatch({ type: 'SET_CLAIMING', value: '' })
@@ -259,7 +259,7 @@ const ContextProvider = ({ children }) => {
         })
     } catch (error) {
       console.error(error)
-      dispatch({ type: 'SET_SENDING', value: 'Claiming failed. Please try again...' })
+      dispatch({ type: 'SET_CLAIMING', value: 'Claiming failed. Please try again...' })
       setTimeout(() => {
         dispatch({ type: 'SET_CLAIMING', value: '' })
       }, 2000)

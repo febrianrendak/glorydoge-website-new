@@ -3,6 +3,7 @@ import { useContext, useState } from 'react'
 
 import NavBar from './NavBar'
 import Container from './Container'
+import WalletBar from './WalletBar'
 import { GlobalDispatchContext, GlobalStateContext } from './ContextProvider'
 
 const ProgressBar = ({ totalContributions = 0, privateSaleCap = 0 }) => {
@@ -11,9 +12,8 @@ const ProgressBar = ({ totalContributions = 0, privateSaleCap = 0 }) => {
   return (
     <div className="relative w-full h-4 bg-white bg-opacity-10 rounded-lg">
       <div
-        className={`w-[${
-          progress || 0
-        }%] absolute bottom-0 left-0 top-0 bg-secondary rounded-bl-lg rounded-tl-lg transition`}
+        className={`absolute bottom-0 left-0 top-0 bg-secondary rounded-bl-lg rounded-tl-lg transition`}
+        style={{ width: `${progress || 0}%` }}
       />
     </div>
   )
@@ -34,12 +34,14 @@ const PrivateSale = ({ location }) => {
   return (
     <>
       <NavBar location={location} />
-      <Container className="flex flex-col items-center py-6 space-y-8">
-        <h1 className="text-gradient font-expletus text-4xl font-bold leading-relaxed">
+      <Container className="flex flex-col items-center px-1 py-6 space-y-8">
+        <h1 className="text-gradient font-expletus text-2xl font-bold leading-relaxed sm:text-4xl">
           GloryDoge private sale
         </h1>
 
-        <div className="w-[460px] flex flex-col items-center bg-white bg-opacity-10 rounded-lg shadow-md overflow-hidden">
+        <WalletBar className="text-sm space-x-1" />
+
+        <div className="sm:w-[460px] flex flex-col items-center w-full bg-white bg-opacity-10 rounded-lg shadow-md overflow-hidden">
           <div className="flex flex-col items-center p-5 space-y-4">
             {privateSaleData && (
               <>
@@ -89,7 +91,7 @@ const PrivateSale = ({ location }) => {
                 )}
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">Amount to contribute</p>
-                  <div className="h-[50px] flex items-center w-full text-xl bg-secondary bg-opacity-20">
+                  <div className="h-[50px] flex items-center w-full text-base bg-secondary bg-opacity-20 sm:text-xl">
                     <input
                       placeholder="0.0"
                       type="number"
@@ -104,7 +106,7 @@ const PrivateSale = ({ location }) => {
 
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">You will get</p>
-                  <div className="h-[50px] flex items-center w-full text-xl bg-black bg-opacity-20">
+                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-20 sm:text-xl">
                     <input
                       placeholder="0.0"
                       className="px-4 w-full h-full bg-transparent outline-none"
@@ -133,7 +135,7 @@ const PrivateSale = ({ location }) => {
 
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">Your contribution & balance</p>
-                  <div className="h-[50px] flex items-center w-full text-xl bg-black bg-opacity-20">
+                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-20 sm:text-xl">
                     <input
                       placeholder="0.0"
                       className="px-4 w-full h-full bg-transparent outline-none"
@@ -142,7 +144,7 @@ const PrivateSale = ({ location }) => {
                     />
                     <p className="pl-0 px-4 py-2">BNB</p>
                   </div>
-                  <div className="h-[50px] flex items-center w-full text-xl bg-black bg-opacity-20">
+                  <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-20 sm:text-xl">
                     <input
                       placeholder="0.0"
                       className="px-4 w-full h-full bg-transparent outline-none"
