@@ -13,7 +13,7 @@ const providerOptions =
           package: WalletConnectProvider,
           options: {
             rpc: {
-              4: 'http://localhost:8545',
+              4: 'https://rinkeby-light.eth.linkpool.io',
             },
           },
         },
