@@ -46,10 +46,7 @@ const PrivateSale = ({ location }) => {
                 <p className="text-2xl font-bold">
                   {privateSaleData.totalContributions} / {privateSaleData.privateSaleCap} BNB
                 </p>
-                <p>
-                  Min: {privateSaleData.minContribution} BNB - Max:{' '}
-                  {privateSaleData.maxContribution} BNB
-                </p>
+                <p className="font-bold">Total contributions</p>
               </>
             )}
           </div>
@@ -105,6 +102,11 @@ const PrivateSale = ({ location }) => {
                     />
                     <p className="pl-0 px-4 py-2">BNB</p>
                   </div>
+
+                  <p className="pt-2 text-center">
+                    Min: {privateSaleData.minContribution} BNB - Max:{' '}
+                    {privateSaleData.maxContribution} BNB
+                  </p>
                 </div>
 
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
