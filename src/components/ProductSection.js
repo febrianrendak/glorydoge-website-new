@@ -27,8 +27,8 @@ const ProductsSection = () => {
     <SectionContainer
       id="product"
       title="GloryPad"
-      description="A next-gen IDO Launchpad where developers, influencers, and investors gather to bring
-    creative ideas to life. (Coming soon)"
+      description="The next-gen IDO Launchpad where developers, influencers, and investors gather to bring
+    innovative ideas to life. (Under development)"
     >
       <div className="my-24 space-y-20 sm:my-32 lg:space-y-32">
         <Feature
