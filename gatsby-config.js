@@ -10,15 +10,16 @@ module.exports = {
     twitterUsername: '@GloryDogeCoin',
   },
   plugins: [
-    'gatsby-plugin-postcss',
-    'gatsby-plugin-twitter',
-    'gatsby-plugin-image',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingId: 'G-90VREYPYCQ',
+        id: 'GTM-P3HL9SH',
+        includeInDevelopment: false,
       },
     },
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
+    'gatsby-plugin-twitter',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
