@@ -85,7 +85,9 @@ const PrivateSale = ({ location }) => {
               <>
                 {sending && <p className="text-center text-secondary">{sending}</p>}
                 {!privateSaleData.privateSaleOpen && (
-                  <p className="text-center text-orange">Private sale is closed for now</p>
+                  <p className="text-center text-orange">
+                    Private sale will start today at 8 PM CEST
+                  </p>
                 )}
                 <div>
                   <div className="from-[#8A2387] via-[#E94057] to-[#F27121] flex flex-col bg-gradient-to-r rounded overflow-hidden">
