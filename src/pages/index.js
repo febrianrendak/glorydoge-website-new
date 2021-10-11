@@ -9,12 +9,14 @@ import TeamSection from '../components/TeamSection'
 import NewsBox from '../components/NewsBox'
 import Footer from '../components/Footer'
 import SEO from '../components/seo'
+import Announcement from '../components/Announcement'
 
 const IndexPage = () => {
   return (
     <>
       <SEO />
       <NavBar />
+      <Announcement />
       <Hero />
       <div className="space-y-20">
         <ProductsSection />

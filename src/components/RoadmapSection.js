@@ -50,7 +50,7 @@ const RoadmapSection = () => {
         number="II"
         items={[
           { done: false, text: 'Conduct a successful private sale' },
-          { done: false, text: 'Contract security audit' },
+          { done: false, text: 'Contract security audit & team KYC' },
           { done: false, text: 'Extensive marketing on multiple channels' },
           { done: false, text: 'Conduct a successful pre-sale' },
           { done: false, text: 'Official launch & Listing on PancakeSwap' },
