@@ -87,9 +87,12 @@ const PrivateSale = ({ location }) => {
                 {!privateSaleData.privateSaleOpen && (
                   <p className="text-center text-orange">Private sale is closed for now</p>
                 )}
-                <div className="from-[#8A2387] via-[#E94057] to-[#F27121] ring-[#E94057] ring-offset-[#1A2D3A] flex flex-col bg-gradient-to-r rounded overflow-hidden focus-within:ring-2 ring-offset-2">
-                  <p className="flex-1 px-4 py-2">Amount to contribute</p>
-                  <div className="h-[50px] bg-[#0F1921] flex items-center w-full text-white text-base sm:text-xl">
+                <div>
+                  <div className="from-[#8A2387] via-[#E94057] to-[#F27121] flex flex-col bg-gradient-to-r rounded overflow-hidden">
+                    <p className="flex-1 px-4 py-2">Amount to contribute</p>
+                  </div>
+
+                  <div className="h-[50px] bg-[#0F1921] ring-offset-[#1A2D3A] flex items-center mt-3 w-full text-white text-base bg-opacity-60 rounded shadow-inner focus-within:ring-2 ring-secondary ring-offset-2 sm:text-xl">
                     <input
                       placeholder="0.0"
                       type="number"
