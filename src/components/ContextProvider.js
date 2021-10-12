@@ -7,7 +7,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 import abi from '../abi/GloryDogePrivateSale.json'
 
 const CONTRACT_ADDRESS = '0x5583B2Bc7D5DF910d6c237aB7D4764d07CC99C90'
-const CHAIN_ID = [56, 1]
+const CHAIN_ID = [56]
 
 const providerOptions =
   typeof window !== undefined
@@ -16,9 +16,9 @@ const providerOptions =
           package: WalletConnectProvider,
           options: {
             rpc: {
-              1: 'https://bsc-dataseed1.binance.org',
               56: 'https://bsc-dataseed1.binance.org',
             },
+            network: 'binance',
           },
         },
       }
