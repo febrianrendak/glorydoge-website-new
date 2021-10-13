@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { NewspaperIcon } from '@heroicons/react/solid'
-import { ChatAltIcon, CashIcon } from '@heroicons/react/solid'
+import { ChatAltIcon, CashIcon, ClipboardCheckIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
 import SocialLink from './SocialLink'
@@ -27,24 +27,40 @@ const Hero = () => {
           investors' funds.
         </p>
 
-        <div className="flex flex-col justify-center text-sm space-y-3 sm:flex-row sm:w-full sm:space-x-4 sm:space-y-0 lg:justify-start xl:text-base">
-          <a className="btn" href="https://docs.glorydogecoin.com" target="_blank" rel="noreferrer">
-            <NewspaperIcon className="btn-icon" />
-            <span className="btn-text">Read the White Paper</span>
-          </a>
-          <Link to="/private-sale" className="btn btn-secondary sm:hidden">
-            <CashIcon className="btn-icon" />
-            <span className="btn-text">Buy GLORYD</span>
-          </Link>
+        <div className="flex flex-col space-y-3">
           <a
-            className="btn btn-secondary"
-            href="https://t.me/GloryDogeCoin"
+            className="btn font-bold"
+            href="https://dessertswap.finance/audits/Glory%20Doge%20Coin%20BSC%20Audit%2011739615.pdf"
             target="_blank"
             rel="noreferrer"
           >
-            <ChatAltIcon className="btn-icon" />
-            <span className="btn-text">Join on Telegram</span>
+            <ClipboardCheckIcon className="btn-icon" />
+            <span className="btn-text">Contract Audit</span>
           </a>
+          <div className="flex flex-col justify-center text-sm space-y-3 sm:flex-row sm:w-full sm:space-x-3 sm:space-y-0 lg:justify-start xl:text-base">
+            <a
+              className="btn btn-secondary"
+              href="https://docs.glorydogecoin.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <NewspaperIcon className="btn-icon" />
+              <span className="btn-text">Read the White Paper</span>
+            </a>
+            <Link to="/private-sale" className="btn btn-secondary sm:hidden">
+              <CashIcon className="btn-icon" />
+              <span className="btn-text">Buy GLORYD</span>
+            </Link>
+            <a
+              className="btn btn-secondary"
+              href="https://t.me/GloryDogeCoin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ChatAltIcon className="btn-icon" />
+              <span className="btn-text">Join on Telegram</span>
+            </a>
+          </div>
         </div>
       </div>
       <div className="hidden flex-1 items-center mt-12 lg:flex lg:mt-0">
