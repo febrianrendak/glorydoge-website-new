@@ -134,6 +134,7 @@ const PrivateSale = ({ location }) => {
                     contribution < 0.1 ||
                     contribution > 3 ||
                     !privateSaleData.privateSaleOpen ||
+                    privateSaleData.totalContributions >= privateSaleData.privateSaleCap ||
                     sending
                   }
                   onClick={onContribute}
