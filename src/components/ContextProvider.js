@@ -6,7 +6,7 @@ import WalletConnectProvider from '@walletconnect/web3-provider'
 
 import abi from '../abi/GloryDogePrivateSale.json'
 
-const CONTRACT_ADDRESS = '0xB6473e0C4A6569c59fC4545f84C43F23Bf8ACBb9'
+const CONTRACT_ADDRESS = '0x27783E7169Dd378a64449912E77D4CaFD747890A'
 const CHAIN_ID = [56]
 
 const providerOptions =
