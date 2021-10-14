@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useContext, useState } from 'react'
+import { Link } from 'gatsby'
 
 import NavBar from './NavBar'
 import Container from './Container'
@@ -41,6 +42,9 @@ const PrivateSale = ({ location }) => {
           <span className="whitespace-nowrap">30 Billion</span> more tokens than pre-sale and
           launch!
         </p>
+        <Link to="/" className="text-center text-secondary underline">
+          Learn more about the project on the homepage!
+        </Link>
 
         <WalletBar className="text-sm sm:hidden" />
 
