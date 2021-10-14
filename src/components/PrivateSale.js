@@ -37,8 +37,8 @@ const PrivateSale = ({ location }) => {
       <Container className="flex flex-col items-center px-1 py-6 space-y-8">
         <h1 className="text-2xl font-bold leading-relaxed sm:text-4xl">GloryDoge private sale</h1>
         <p className="text-center">
-          Contribute to our private sale and get{' '}
-          <span className="whitespace-nowrap">10 Billion</span> more tokens than pre-sale and
+          Contribute to our private sale and get up to{' '}
+          <span className="whitespace-nowrap">30 Billion</span> more tokens than pre-sale and
           launch!
         </p>
 
