@@ -70,7 +70,7 @@ const TokenSection = () => {
         <Feature
           header="50%"
           title="DAPPs revenue distribution"
-          description="50% of the revenue from our DAPPs is distributed back to our investors in GLORYD."
+          description="50% of the revenue from our DAPPs is distributed back to our investors in BNB through staking."
         />
         <Feature
           header="10%"
