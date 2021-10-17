@@ -49,13 +49,12 @@ const RoadmapSection = () => {
       <List
         number="II"
         items={[
-          { done: false, text: 'Conduct a successful private sale' },
+          { done: true, text: 'Conduct a successful private sale' },
           { done: true, text: 'Team identity reveal (Doxxing)' },
           { done: true, text: 'Contract security audit & team KYC' },
           { done: false, text: 'Extensive marketing on multiple channels' },
           { done: false, text: 'Conduct a successful pre-sale' },
           { done: false, text: 'Official launch & Listing on PancakeSwap' },
-          { done: false, text: 'Private sale contest prize distribution to winners' },
           { done: false, text: 'Listing on CoinMarketCap and CoinGecko' },
         ]}
       />
