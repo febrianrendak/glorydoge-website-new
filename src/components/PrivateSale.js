@@ -38,9 +38,7 @@ const PrivateSale = ({ location }) => {
       <Container className="flex flex-col items-center px-1 py-6 space-y-8">
         <h1 className="text-2xl font-bold leading-relaxed sm:text-4xl">GloryDoge private sale</h1>
         <p className="text-center">
-          Contribute to our private sale and get up to{' '}
-          <span className="whitespace-nowrap">30 Billion</span> more tokens than pre-sale and
-          launch!
+          Private sale is concluded. You can claim your tokens right after PancakeSwap launch.
         </p>
         <Link to="/" className="text-center text-secondary underline">
           Learn more about the project on the homepage!
@@ -90,15 +88,12 @@ const PrivateSale = ({ location }) => {
             {privateSaleData && account && (
               <>
                 {sending && <p className="text-center text-secondary">{sending}</p>}
-                {!privateSaleData.privateSaleOpen && (
-                  <p className="text-center text-orange">Private sale is concluded!</p>
-                )}
                 <div>
                   <div className="from-[#8A2387] via-[#E94057] to-[#F27121] flex flex-col bg-gradient-to-r rounded overflow-hidden">
-                    <p className="flex-1 px-4 py-2">Amount to contribute</p>
+                    <p className="flex-1 px-4 py-2">Your contribution & balance</p>
                   </div>
 
-                  <div className="h-[50px] bg-[#0F1921] ring-offset-[#1A2D3A] flex items-center mt-3 w-full text-white text-base bg-opacity-60 rounded shadow-inner focus-within:ring-2 ring-secondary ring-offset-2 sm:text-xl">
+                  {/* <div className="h-[50px] bg-[#0F1921] ring-offset-[#1A2D3A] flex items-center mt-3 w-full text-white text-base bg-opacity-60 rounded shadow-inner focus-within:ring-2 ring-secondary ring-offset-2 sm:text-xl">
                     <input
                       placeholder="0.0"
                       type="number"
@@ -108,15 +103,15 @@ const PrivateSale = ({ location }) => {
                       step="0.01"
                     />
                     <p className="pl-0 px-4 py-2">BNB</p>
-                  </div>
+                  </div> */}
 
-                  <p className="pt-2 text-center">
+                  {/* <p className="pt-2 text-center">
                     Min: {privateSaleData.minContribution} BNB - Max:{' '}
                     {privateSaleData.maxContribution} BNB
-                  </p>
+                  </p> */}
                 </div>
 
-                <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
+                {/* <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
                   <p className="flex-1 px-4 py-2">You will get</p>
                   <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-30 sm:text-xl">
                     <input
@@ -127,9 +122,9 @@ const PrivateSale = ({ location }) => {
                     />
                     <p className="pl-0 px-4 py-2">GLORYD</p>
                   </div>
-                </div>
+                </div> */}
 
-                <button
+                {/* <button
                   className="btn btn-secondary flex justify-center disabled:opacity-40 disabled:pointer-events-none"
                   disabled={
                     Number(contribution) === 0 ||
@@ -142,12 +137,12 @@ const PrivateSale = ({ location }) => {
                   onClick={onContribute}
                 >
                   Contribute
-                </button>
+                </button> */}
 
                 {claiming && <p className="text-center text-secondary">{claiming}</p>}
 
                 <div className="flex flex-col bg-black bg-opacity-20 rounded overflow-hidden focus-within:ring-1">
-                  <p className="flex-1 px-4 py-2">Your contribution & balance</p>
+                  {/* <p className="flex-1 px-4 py-2">Your contribution & balance</p> */}
                   <div className="h-[50px] flex items-center w-full text-base bg-black bg-opacity-30 sm:text-xl">
                     <input
                       placeholder="0.0"
@@ -179,12 +174,6 @@ const PrivateSale = ({ location }) => {
                 >
                   Claim tokens
                 </button>
-
-                {!privateSaleData.claimOpen && (
-                  <p className="text-center text-secondary text-sm">
-                    You can claim your tokens right after PancakeSwap launch
-                  </p>
-                )}
               </>
             )}
           </div>

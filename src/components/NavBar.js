@@ -61,7 +61,7 @@ const NavBar = ({ location }) => {
             <li className="hidden sm:block">
               <Link to="/private-sale" className="btn btn-secondary">
                 <CashIcon className="btn-icon" />
-                <span className="btn-text">Buy GLORYD</span>
+                <span className="btn-text">Claim Tokens</span>
               </Link>
             </li>
           </ul>

@@ -49,7 +49,7 @@ const Hero = () => {
             </a>
             <Link to="/private-sale" className="btn btn-secondary sm:hidden">
               <CashIcon className="btn-icon" />
-              <span className="btn-text">Buy GLORYD</span>
+              <span className="btn-text">Claim Tokens</span>
             </Link>
             <a
               className="btn btn-secondary"
