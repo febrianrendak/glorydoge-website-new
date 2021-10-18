@@ -51,7 +51,8 @@ const RoadmapSection = () => {
         items={[
           { done: true, text: 'Conduct a successful private sale' },
           { done: true, text: 'Team identity reveal (Doxxing)' },
-          { done: true, text: 'Contract security audit & team KYC' },
+          { done: true, text: 'Dessert Finance contract audit' },
+          { done: false, text: 'Techrate contract audit' },
           { done: false, text: 'Extensive marketing on multiple channels' },
           { done: false, text: 'Conduct a successful pre-sale' },
           { done: false, text: 'Official launch & Listing on PancakeSwap' },
