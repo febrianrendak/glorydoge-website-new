@@ -21,7 +21,7 @@ const TokenSection = () => {
     <SectionContainer
       id="token"
       title="GLORYD"
-      description="The backbone of our projects, and the golden bridge connecting our DAPPs to our inverstors. Backed by a solid economic model."
+      description="The backbone of our projects, and the golden bridge connecting our DAPPs to our investors. Backed by a solid economic model."
     >
       <div className="grid gap-y-24 grid-cols-1 justify-items-center mb-32 mt-20 mx-auto sm:grid-cols-2 sm:w-auto md:gap-y-32 md:w-auto xl:w-9/12">
         <ContractAddress className="sm:col-span-2" />
