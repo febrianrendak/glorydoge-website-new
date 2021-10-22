@@ -18,13 +18,22 @@ const IndexPage = () => {
       <NavBar />
       <Announcement />
       <Hero />
+      <NewsBox
+        title="As featured on"
+        description="Read more about us on financial news websites"
+        type="articles"
+      />
       <div className="space-y-20">
         <ProductsSection />
         <TokenSection />
         <RoadmapSection />
         <TeamSection />
       </div>
-      <NewsBox />
+      <NewsBox
+        title="Stay up to date"
+        description="Follow us on Twitter to stay updated with our latest announcements and news"
+        type="twitter"
+      />
       <Footer />
     </>
   )
