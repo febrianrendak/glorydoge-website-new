@@ -50,4 +50,8 @@
   .line-height-normal {
     line-height: normal !important;
   }
+
+  .disabled {
+    @apply opacity-40 pointer-events-none;
+  }
 }
