@@ -7,9 +7,9 @@ const Audits = () => {
   return (
     <Container className="flex flex-col items-center my-16">
       <div className="relative flex items-center mb-12">
-        <h2 className="text-3xl font-bold">Contract audits</h2>
-        <div className="h-[2px] right-[110%] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-l rounded from-secondary to-orange" />
-        <div className="h-[2px] left-[110%] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-r rounded from-secondary to-orange" />
+        <h2 className="text-xl font-bold sm:text-3xl">Contract audits</h2>
+        <div className="h-[2px] right-[110%] w-[50px] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-l rounded from-secondary to-orange" />
+        <div className="h-[2px] left-[110%] w-[50px] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-r rounded from-secondary to-orange" />
       </div>
       <div className="sm:w-[60%] grid gap-4 grid-cols-2 mx-auto sm:gap-8">
         <a

@@ -20,11 +20,11 @@ const IndexPage = () => {
       <NavBar />
       <Announcement />
       <Hero />
+      <Audits />
       <Articles />
       <div className="space-y-20">
         <ProductsSection />
         <TokenSection />
-        <Audits />
         <RoadmapSection />
         <TeamSection />
       </div>

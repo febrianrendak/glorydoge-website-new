@@ -6,7 +6,7 @@ import Container from './Container'
 const Announcement = () => {
   return (
     <Container>
-      <div className="mt-12 p-5 w-full bg-secondary bg-opacity-30 border border-secondary rounded-lg space-y-2">
+      <div className="mt-16 p-5 w-full text-sm bg-secondary bg-opacity-30 border border-secondary rounded-lg space-y-2 sm:text-base">
         <p>
           Private sale is concluded! You will be able to claim your tokens right after the launch on
           PancakeSwap{' '}
@@ -23,6 +23,15 @@ const Announcement = () => {
             rel="noreferrer"
           >
             here.
+          </a>{' '}
+          The presale will take place on the 28th October at 4 PM UTC on{' '}
+          <a
+            className="underline font-bold"
+            href="https://www.pinksale.finance/#/launchpad/0x1c5dd98f9518F755eEeB6af0F162638b756D5771?chain=BSC"
+            target="_blank"
+            rel="noreferrer"
+          >
+            PinkSale.
           </a>
         </p>
       </div>
