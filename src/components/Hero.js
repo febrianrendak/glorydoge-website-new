@@ -28,18 +28,9 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col space-y-3">
-          <a
-            className="btn font-bold"
-            href="https://dessertswap.finance/audits/Glory%20Doge%20Coin%20BSC%20Audit%2011739615.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ClipboardCheckIcon className="btn-icon" />
-            <span className="btn-text">Contract Audit</span>
-          </a>
           <div className="flex flex-col justify-center text-sm space-y-3 sm:flex-row sm:w-full sm:space-x-3 sm:space-y-0 lg:justify-start xl:text-base">
             <a
-              className="btn btn-secondary"
+              className="btn"
               href="https://docs.glorydogecoin.com"
               target="_blank"
               rel="noreferrer"

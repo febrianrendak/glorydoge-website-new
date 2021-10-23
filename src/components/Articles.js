@@ -11,7 +11,7 @@ const Articles = () => {
         <div className="h-[2px] right-[110%] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-l rounded from-secondary to-orange" />
         <div className="h-[2px] left-[110%] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-r rounded from-secondary to-orange" />
       </div>
-      <div className="w-[80%] grid gap-8 grid-cols-1 mx-auto sm:grid-cols-2 lg:grid-cols-4">
+      <div className="sm:w-[80%] grid gap-4 grid-cols-2 mx-auto sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <a
           className="h-[80px] sm:h-[120px] flex items-center justify-center px-2 w-full bg-white rounded-md hover:shadow-lg overflow-hidden transition"
           href="https://bitcourier.co.uk/news/glorydoge-interview"

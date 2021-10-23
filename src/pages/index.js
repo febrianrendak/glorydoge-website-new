@@ -11,6 +11,7 @@ import Footer from '../components/Footer'
 import SEO from '../components/seo'
 import Announcement from '../components/Announcement'
 import Articles from '../components/Articles'
+import Audits from '../components/Audits'
 
 const IndexPage = () => {
   return (
@@ -23,6 +24,7 @@ const IndexPage = () => {
       <div className="space-y-20">
         <ProductsSection />
         <TokenSection />
+        <Audits />
         <RoadmapSection />
         <TeamSection />
       </div>
