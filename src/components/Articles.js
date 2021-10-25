@@ -27,8 +27,8 @@ const Articles = () => {
           />
         </a>
         <a
-          className="h-[80px] disabled sm:h-[120px] flex items-center justify-center px-2 w-full bg-white rounded-md hover:shadow-lg overflow-hidden transition"
-          href="#"
+          className="h-[80px] sm:h-[120px] flex items-center justify-center px-2 w-full bg-white rounded-md hover:shadow-lg overflow-hidden transition"
+          href="https://www.marketwatch.com/press-release/glorydoge-offers-a-hub-for-sharing-investing-and-developing-innovative-ideas-2021-10-23"
           target="_blank"
           rel="noreferrer"
         >
