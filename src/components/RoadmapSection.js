@@ -53,8 +53,9 @@ const RoadmapSection = () => {
           { done: true, text: 'Team identity reveal (Doxxing)' },
           { done: true, text: 'Dessert Finance contract audit' },
           { done: true, text: 'Techrate contract audit' },
-          { done: false, text: 'Extensive marketing on multiple channels' },
-          { done: false, text: 'Conduct a successful pre-sale' },
+          { done: true, text: 'Extensive marketing on multiple channels' },
+          { done: true, text: 'Conduct a successful pre-sale' },
+          { done: false, text: 'Continuous marketing plans' },
           { done: false, text: 'Official launch & Listing on PancakeSwap' },
           { done: false, text: 'Listing on CoinMarketCap and CoinGecko' },
         ]}

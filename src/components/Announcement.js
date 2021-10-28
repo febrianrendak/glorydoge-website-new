@@ -15,16 +15,8 @@ const Announcement = () => {
           </Link>
         </p>
         <p>
-          Presale whitelist contest is live{' '}
-          <a
-            className="underline font-bold"
-            href="https://sweepwidget.com/view/36473-vx3r5t9l"
-            target="_blank"
-            rel="noreferrer"
-          >
-            here.
-          </a>{' '}
-          The presale will take place on the 28th October at 4 PM UTC on{' '}
+          Presale successfully done. Launch on PancakeSwap is on October 29 at 4PM UTC. You can
+          claim your presale tokens on{' '}
           <a
             className="underline font-bold"
             href="https://www.pinksale.finance/#/launchpad/0x1c5dd98f9518F755eEeB6af0F162638b756D5771?chain=BSC"
