@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { NewspaperIcon } from '@heroicons/react/solid'
-import { ChatAltIcon, CashIcon, ClipboardCheckIcon } from '@heroicons/react/solid'
+import { ChatAltIcon, CashIcon } from '@heroicons/react/solid'
 
 import Container from './Container'
 import SocialLink from './SocialLink'
@@ -28,9 +28,18 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col space-y-3">
+          <a
+            className="btn"
+            href="https://pancakeswap.finance/swap?outputCurrency=0xCC5667333F5e997aC9F0C26d41b7ddA65b2b675a"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <CashIcon className="btn-icon" />
+            <span className="btn-text">Buy on PancakeSwap</span>
+          </a>
           <div className="flex flex-col justify-center text-sm space-y-3 sm:flex-row sm:w-full sm:space-x-3 sm:space-y-0 lg:justify-start xl:text-base">
             <a
-              className="btn"
+              className="btn btn-secondary"
               href="https://docs.glorydogecoin.com"
               target="_blank"
               rel="noreferrer"
