@@ -50,16 +50,6 @@ const TokenSection = () => {
           header="4%"
           title="Team & devs tax"
           description="4% of every transaction is dedicated to keep the project going by covering team expenses."
-          link={
-            <a
-              className="block mt-2 text-secondary text-sm"
-              href="https://bscscan.com/address/0xdc4340b73a388863590476ef7d450bc316d87712"
-              target="_blank"
-              rel="noreferrer"
-            >
-              (Team wallet)
-            </a>
-          }
         />
         <Feature
           header="0%"
