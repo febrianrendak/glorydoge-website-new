@@ -43,20 +43,22 @@ const RoadmapSection = () => {
           { done: true, text: 'White Paper release' },
           { done: true, text: 'New website release' },
           { done: true, text: 'Pre-sale whitelist contest' },
+          { done: true, text: 'Team identity reveal (Doxxing)' },
+          { done: true, text: 'Conduct a successful private sale' },
         ]}
       />
 
       <List
         number="II"
         items={[
-          { done: true, text: 'Conduct a successful private sale' },
-          { done: true, text: 'Team identity reveal (Doxxing)' },
           { done: true, text: 'Dessert Finance contract audit' },
           { done: true, text: 'Techrate contract audit' },
           { done: true, text: 'Extensive marketing on multiple channels' },
           { done: true, text: 'Conduct a successful pre-sale' },
           { done: true, text: 'Continuous marketing plans' },
           { done: true, text: 'Official launch & Listing on PancakeSwap' },
+          { done: true, text: 'CertiK contract audit' },
+          { done: false, text: 'Collaborate with "Luna PR" for PR & Marketing' },
           { done: false, text: 'Listing on CoinMarketCap and CoinGecko' },
         ]}
       />
@@ -64,10 +66,10 @@ const RoadmapSection = () => {
       <List
         number="III"
         items={[
+          { done: false, text: 'Hire more team members' },
           { done: false, text: 'GloryPad security audit' },
           { done: false, text: 'Finalize and release GloryPad to the market' },
           { done: false, text: 'Extensive marketing and user base building' },
-          { done: false, text: 'Hire more team members' },
           { done: false, text: 'Automate DAPPs revenu distribution to holders' },
           { done: false, text: 'Kick off the development of new features and DAPPs' },
         ]}
