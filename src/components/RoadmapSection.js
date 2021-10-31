@@ -55,8 +55,8 @@ const RoadmapSection = () => {
           { done: true, text: 'Techrate contract audit' },
           { done: true, text: 'Extensive marketing on multiple channels' },
           { done: true, text: 'Conduct a successful pre-sale' },
-          { done: false, text: 'Continuous marketing plans' },
-          { done: false, text: 'Official launch & Listing on PancakeSwap' },
+          { done: true, text: 'Continuous marketing plans' },
+          { done: true, text: 'Official launch & Listing on PancakeSwap' },
           { done: false, text: 'Listing on CoinMarketCap and CoinGecko' },
         ]}
       />
