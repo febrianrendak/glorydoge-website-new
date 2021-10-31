@@ -47,9 +47,9 @@ const TokenSection = () => {
           }
         />
         <Feature
-          header="4%"
+          header="2%"
           title="Team & devs tax"
-          description="4% of every transaction is dedicated to keep the project going by covering team expenses."
+          description="2% of every transaction is dedicated to keep the project going by covering team expenses."
         />
         <Feature
           header="0%"
