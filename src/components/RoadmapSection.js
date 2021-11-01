@@ -57,9 +57,9 @@ const RoadmapSection = () => {
           { done: true, text: 'Conduct a successful pre-sale' },
           { done: true, text: 'Continuous marketing plans' },
           { done: true, text: 'Official launch & Listing on PancakeSwap' },
+          { done: true, text: 'Listing on CoinMarketCap and CoinGecko' },
           { done: false, text: 'CertiK contract audit' },
           { done: false, text: 'Collaborate with "Luna PR" for PR & Marketing' },
-          { done: false, text: 'Listing on CoinMarketCap and CoinGecko' },
         ]}
       />
 
