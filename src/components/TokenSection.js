@@ -27,9 +27,9 @@ const TokenSection = () => {
         <ContractAddress className="sm:col-span-2" />
 
         <Feature
-          header="4%"
+          header="6%"
           title="Holder rewards tax"
-          description="4% of every transaction is instantly distributed to all holders."
+          description="6% of every transaction is instantly distributed to all holders."
         />
         <Feature
           header="2%"
