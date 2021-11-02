@@ -12,6 +12,7 @@ import SEO from '../components/seo'
 import Announcement from '../components/Announcement'
 import Articles from '../components/Articles'
 import Audits from '../components/Audits'
+import Listings from '../components/Listings'
 
 const IndexPage = () => {
   return (
@@ -21,6 +22,7 @@ const IndexPage = () => {
       <Announcement />
       <Hero />
       <Audits />
+      <Listings />
       <Articles />
       <div className="space-y-20">
         <ProductsSection />
