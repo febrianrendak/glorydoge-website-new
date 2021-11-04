@@ -11,7 +11,7 @@ const Announcement = () => {
           We're airdroping $20,000 BUSD to 4 winners.{' '}
           <a
             className="underline"
-            href="https://forms.gle/V5FxDaqtsHnCTxcL7"
+            href="https://twitter.com/GloryDogeCoin/status/1456036296162529288"
             target="_blank"
             rel="noreferrer"
           >
