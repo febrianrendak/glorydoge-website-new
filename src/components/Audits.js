@@ -11,7 +11,21 @@ const Audits = () => {
         <div className="h-[2px] right-[110%] w-[50px] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-l rounded from-secondary to-orange" />
         <div className="h-[2px] left-[110%] w-[50px] sm:w-[100px] lg:w-[260px] absolute bg-gradient-to-r rounded from-secondary to-orange" />
       </div>
-      <div className="sm:w-[60%] grid gap-4 grid-cols-2 mx-auto sm:gap-8">
+      <div className="sm:w-[80%] grid gap-4 grid-cols-2 mx-auto sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <a
+          className="h-[80px] sm:h-[120px] flex items-center justify-center px-2 w-full bg-white rounded-md hover:shadow-lg overflow-hidden transition"
+          href="https://www.certik.org/projects/glory-doge"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <StaticImage
+            src="../images/certik.png"
+            alt="We aim to build a secure DeFi ecosystem to help bring creative ideas to life and protect early investors' funds, says the Founder of GloryDoge"
+            quality="90"
+            placeholder="none"
+            className="w-[160px]"
+          />
+        </a>
         <a
           className="h-[80px] sm:h-[120px] flex items-center justify-center px-2 w-full bg-white rounded-md hover:shadow-lg overflow-hidden transition"
           href="https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/GloryDoge%20Full%20Smart%20Contract%20Security%20Audit.pdf"
