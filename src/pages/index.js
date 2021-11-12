@@ -19,7 +19,7 @@ const IndexPage = () => {
     <>
       <SEO />
       <NavBar />
-      <Announcement />
+      {/* <Announcement /> */}
       <Hero />
       <Audits />
       <Listings />
