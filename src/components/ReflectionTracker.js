@@ -97,7 +97,7 @@ const ReflectionTracker = () => {
         <p className="mb-5 text-base">{title}</p>
         <div className="flex">
           <input
-            placeholder="0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            placeholder="0.00000"
             type="text"
             className="h-[40px] w-[240px] bg-[#041622] px-4 w-full text-2xl rounded-lg truncate"
             value={value}
