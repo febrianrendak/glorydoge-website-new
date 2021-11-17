@@ -1,3 +1,5 @@
+
+import Axios from 'axios'
 import * as d3 from 'd3'
 import { StaticImage } from 'gatsby-plugin-image'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -7,7 +9,7 @@ import Container from './Container'
 const ReflectionTracker = () => {
   const initValues = {
     balance: 0,
-    totalReflection: 0,
+    reflections: 0,
     purchased: 0,
     sold: 0,
   }
@@ -23,17 +25,15 @@ const ReflectionTracker = () => {
     drawChart()
   }, [])
 
-  const fetchBalance = () => {
+  const fetchBalance = async () => {
     if (!token.length) return
-    //this will be moved to backend side
-    const apiKey = '58RXIVWFS2KV86K8G677Q5JD63ISB7AZM4'
-    const dummyURL = `https://api.bscscan.com/api?module=account&action=balance&address=${token}&apikey=${apiKey}`
-    fetch(dummyURL)
-      .then(response => response.json())
-      .then(resultData => {
-        setValues({ ...values, balance: resultData.result })
+    Axios.get("http://localhost:5000/api/v1/bscscan/reflections", { params: { token } })
+      .then(result => {
+        setValues(result.data)
       })
-      .catch(error => console.log('error : ', error))
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   const handleKeyDown = useCallback(
@@ -99,7 +99,7 @@ const ReflectionTracker = () => {
           <input
             placeholder="0.00000"
             type="text"
-            className="h-[40px] w-[240px] bg-[#041622] px-4 w-full text-2xl rounded-lg truncate"
+            className="h-[40px] w-[240px] bg-[#041622] disabled px-4 w-full text-2xl rounded-lg outline-none opacity-100 truncate"
             value={value}
             onChange={onChange}
           />
@@ -137,8 +137,8 @@ const ReflectionTracker = () => {
             />
             <Input
               title="Total reflections"
-              value={values.totalReflection}
-              onChange={e => setValues({ ...values, totalReflection: e.target.value })}
+              value={values.reflections}
+              onChange={e => setValues({ ...values, reflections: e.target.value })}
             />
             <Input
               title="# of GLORYD purchased"
