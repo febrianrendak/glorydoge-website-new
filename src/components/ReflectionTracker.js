@@ -1,8 +1,7 @@
-
 import Axios from 'axios'
 import * as d3 from 'd3'
 import { StaticImage } from 'gatsby-plugin-image'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import Container from './Container'
 
@@ -15,6 +14,7 @@ const ReflectionTracker = () => {
   }
   const [token, setToken] = useState('')
   const [values, setValues] = useState(initValues)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown)
@@ -22,17 +22,22 @@ const ReflectionTracker = () => {
   })
 
   useEffect(() => {
-    drawChart()
-  }, [])
+    drawChart(values)
+  }, [values])
 
   const fetchBalance = async () => {
-    if (!token.length) return
-    Axios.get("http://localhost:5000/api/v1/bscscan/reflections", { params: { token } })
+    setLoading(true)
+    if (!token.length) {
+      return setLoading(false)
+    }
+    Axios.get('http://localhost:5000/api/v1/bscscan/reflections', { params: { token } })
       .then(result => {
         setValues(result.data)
+        setLoading(false)
       })
       .catch(err => {
         console.log(err)
+        setLoading(false)
       })
   }
 
@@ -41,6 +46,7 @@ const ReflectionTracker = () => {
       if (e.which === 13) {
         e.preventDefault()
         e.stopPropagation()
+
         if (!token.length) {
           setValues(initValues)
           return
@@ -48,48 +54,136 @@ const ReflectionTracker = () => {
         fetchBalance()
       }
     },
-    [token]
+    [token] // eslint-disable-line react-hooks/exhaustive-deps
   )
 
-  const drawChart = () => {
+  const drawChart = values => {
     const width = 280
     const height = 280
+    const radius = height / 2
+    const data = [values.reflections, values.purchased || 1]
+
+    const pie = d3.pie().value(d => d)
+    const arc = d3.arc().innerRadius(0).outerRadius(radius)
+    const data_ready = pie(data)
+    // const midAngle = d => {
+    //   return d.startAngle + (d.endAngle - d.startAngle) / 2
+    // }
+    // const outerArc = d3.arc().innerRadius(radius).outerRadius(radius)
+
+    d3.select('#pie-container svg').remove()
 
     const svg = d3
       .select('#pie-container')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
+      .append('g')
+      .attr('transform', `translate(${width / 2}, ${height / 2})`)
 
-    let gradient = svg
+    let gradient1 = svg
       .append('svg:defs')
       .append('svg:linearGradient')
-      .attr('id', 'gradient')
+      .attr('id', 'gradient1')
       .attr('x1', '0%')
       .attr('y1', '0%')
       .attr('x2', '100%')
       .attr('y2', '100%')
       .attr('spreadMethod', 'pad')
 
-    gradient
+    gradient1
       .append('svg:stop')
       .attr('offset', '50%')
       .attr('stop-color', '#0C7FEC')
       .attr('stop-opacity', 1)
 
-    gradient
+    gradient1
       .append('svg:stop')
       .attr('offset', '91%')
       .attr('stop-color', '#49BEFF')
       .attr('stop-opacity', 1)
 
-    const circle = svg
-      .append('circle')
-      .attr('cx', width / 2)
-      .attr('cy', height / 2)
-      .attr('r', height / 3)
-      .attr('fill', 'url(#gradient)')
+    let gradient2 = svg
+      .append('svg:defs')
+      .append('svg:linearGradient')
+      .attr('id', 'gradient2')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '100%')
+      .attr('y2', '100%')
+      .attr('spreadMethod', 'pad')
+
+    gradient2
+      .append('svg:stop')
+      .attr('offset', '50%')
+      .attr('stop-color', '#F16C28')
+      .attr('stop-opacity', 1)
+
+    gradient2
+      .append('svg:stop')
+      .attr('offset', '91%')
+      .attr('stop-color', '#8C2485')
+      .attr('stop-opacity', 1)
+
+    svg.append('g').attr('class', 'slices')
+    svg.append('g').attr('class', 'labels')
+    svg.append('g').attr('class', 'lines')
+
+    svg.append('g').classed('labels', true)
+    svg.append('g').classed('lines', true)
+
+    if (data[0]) {
+      // var polyline = svg
+      //   .select('.lines')
+      //   .selectAll('polyline')
+      //   .data(data_ready)
+      //   .enter()
+      //   .append('polyline')
+      //   .attr('points', function (d) {
+      //     // see label transform function for explanations of these three lines.
+      //     var pos = outerArc.centroid(d)
+      //     pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1)
+      //     return [arc.centroid(d), outerArc.centroid(d), pos]
+      //   })
+      //   .attr('stroke', 'white')
+      //   .attr('storke-width', '1px')
+      //   .attr('fill', 'none')
+      // svg
+      //   .select('.labels')
+      //   .selectAll('text')
+      //   .data(data_ready)
+      //   .enter()
+      //   .append('text')
+      //   .attr('dy', '.35em')
+      //   .html(function (d) {
+      //     return d.data
+      //   })
+      //   .attr('transform', function (d) {
+      //     var pos = outerArc.centroid(d)
+      //     pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1)
+      //     return 'translate(' + pos + ')'
+      //   })
+      //   .style('text-anchor', function (d) {
+      //     return midAngle(d) < Math.PI ? 'start' : 'end'
+      //   })
+    }
+
+    svg
+      .selectAll('chart')
+      .data(data_ready)
+      .enter()
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', (d, i) => {
+        return i === 0 ? `url(#gradient2)` : `url(#gradient1)`
+      })
   }
+
+  const calcPro = useMemo(() => {
+    if (!values.purchased) return 0
+    const percentage = Math.round((values.reflections / values.purchased) * 100 * 1000) / 1000
+    return percentage
+  }, [values])
 
   const Input = ({ title, value, onChange }) => {
     return (
@@ -129,6 +223,7 @@ const ReflectionTracker = () => {
               onChange={e => setToken(e.target.value || '')}
             />
           </div>
+          {loading && <div className="text-center">Loading ...</div>}
           <div className="grid gap-x-24 grid-cols-2 mt-5">
             <Input
               title="Your balance"
@@ -152,8 +247,20 @@ const ReflectionTracker = () => {
             />
           </div>
           <div className="relative flex items-center justify-center w-full">
-            <div className="absolute z-10">
+            <div className="absolute z-10 flex items-center justify-center">
+              {calcPro !== 0 && (
+                <div className="mr-10">
+                  <p className="font-extrabold">{calcPro}%</p>
+                  <p className="border-fuchsia-400 border-t-2">reflections</p>
+                </div>
+              )}
               <div id="pie-container" />
+              {calcPro !== 0 && (
+                <div className="ml-10">
+                  <p className="border-fuchsia-400 border-b-2">Total GLORYD</p>
+                  <p>Purchased</p>
+                </div>
+              )}
             </div>
 
             <StaticImage
