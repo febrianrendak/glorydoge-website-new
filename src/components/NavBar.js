@@ -59,9 +59,9 @@ const NavBar = ({ location }) => {
               <SocialLink icon="bi bi-telegram" url="https://t.me/GloryDogeCoin" label="Telegram" />
             </li>
             <li className="hidden sm:block">
-              <Link to="/private-sale" className="btn btn-secondary">
+              <Link to="/reflection-tracker" className="btn btn-secondary">
                 <CashIcon className="btn-icon" />
-                <span className="btn-text">Claim Tokens</span>
+                <span className="btn-text">Reflections tracker</span>
               </Link>
             </li>
           </ul>

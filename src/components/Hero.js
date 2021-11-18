@@ -47,9 +47,9 @@ const Hero = () => {
               <NewspaperIcon className="btn-icon" />
               <span className="btn-text">Read the White Paper</span>
             </a>
-            <Link to="/private-sale" className="btn btn-secondary sm:hidden">
+            <Link to="/reflection-tracker" className="btn btn-secondary sm:hidden">
               <CashIcon className="btn-icon" />
-              <span className="btn-text">Claim Tokens</span>
+              <span className="btn-text">Reflections tracker</span>
             </Link>
             <a
               className="btn btn-secondary"
