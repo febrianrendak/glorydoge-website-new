@@ -30,7 +30,7 @@ const ReflectionTracker = () => {
     if (!token.length) {
       return setLoading(false)
     }
-    Axios.get('http://localhost:5000/api/v1/bscscan/reflections', { params: { token } })
+    Axios.get('https://api.glorydogecoin.com/api/v1/bscscan/reflections', { params: { token } })
       .then(result => {
         setValues(result.data)
         setLoading(false)
