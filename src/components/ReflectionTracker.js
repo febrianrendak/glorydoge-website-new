@@ -2,6 +2,7 @@ import Axios from 'axios'
 import * as d3 from 'd3'
 import { StaticImage } from 'gatsby-plugin-image'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import Web3 from 'web3'
 
 import Container from './Container'
 
@@ -24,6 +25,12 @@ const ReflectionTracker = () => {
   useEffect(() => {
     drawChart(values)
   }, [values])
+
+  useEffect(() => {
+    if (Web3.utils.isAddress(token)) {
+      fetchBalance()
+    }
+  }, [token])
 
   const fetchBalance = async () => {
     setLoading(true)
