@@ -200,13 +200,10 @@ const ReflectionTracker = () => {
           <input
             placeholder="0.00000"
             type="text"
-            className="h-[40px] w-[240px] bg-[#041622] disabled px-4 w-full text-2xl rounded-lg outline-none opacity-100 truncate"
+            className="h-[40px] bg-[#041622] disabled px-4 w-full text-2xl rounded-lg outline-none opacity-100 truncate"
             value={value}
             onChange={onChange}
           />
-          <span className="bg-[#041622] ml-[-10px] w-[137px] relative text-2xl rounded-lg">
-            <p className="absolute right-5 top-1 text-2xl">GLORYD</p>
-          </span>
         </div>
       </div>
     )
