@@ -192,6 +192,10 @@ const ReflectionTracker = () => {
     return percentage
   }, [values])
 
+  function numberCommaSeparator(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   const Input = ({ title, value, onChange }) => {
     return (
       <div className="relative m-5">
@@ -231,22 +235,22 @@ const ReflectionTracker = () => {
           <div className="grid gap-x-24 grid-cols-1 mt-5 sm:grid-cols-1 md:grid-cols-2">
             <Input
               title="Your balance"
-              value={values.balance}
+              value={numberCommaSeparator(values.balance)}
               onChange={e => setValues({ ...values, balance: e.target.value })}
             />
             <Input
               title="Total reflections"
-              value={values.reflections}
+              value={numberCommaSeparator(values.reflections)}
               onChange={e => setValues({ ...values, reflections: e.target.value })}
             />
             <Input
               title="# of GLORYD purchased"
-              value={values.purchased}
+              value={numberCommaSeparator(values.purchased)}
               onChange={e => setValues({ ...values, purchased: e.target.value })}
             />
             <Input
               title="# of GLORYD sold ( 0 = Diamond hands )"
-              value={values.sold}
+              value={numberCommaSeparator(values.sold)}
               onChange={e => setValues({ ...values, sold: e.target.value })}
             />
           </div>
