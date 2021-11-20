@@ -213,8 +213,6 @@ const ReflectionTracker = () => {
     <>
       <Container className="flex flex-col items-center px-1 py-6 bg-primary space-y-8">
         <h1 className="text-2xl font-bold leading-relaxed sm:text-4xl">Check your reflections</h1>
-        <p className="text-center">Find out how much reflections you got so far</p>
-
         <div className="md:w-[1014px] relative flex flex-col items-center w-full bg-darkBlue rounded-lg shadow-md overflow-hidden">
           <div className="flex flex-col items-center p-5 w-full">
             <p className="text-center">Paste your GLORYD tokens holding wallet below</p>
