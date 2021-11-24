@@ -8,10 +8,10 @@ import Container from './Container'
 
 const ReflectionTracker = () => {
   const initValues = {
-    balance: 0,
-    reflections: 0,
-    purchased: 0,
-    sold: 0,
+    balance: { value: 0, usd: '' },
+    reflections: { value: 0, usd: '' },
+    purchased: { value: 0, usd: '' },
+    sold: { value: 0, usd: '' },
   }
   const [token, setToken] = useState('')
   const [values, setValues] = useState(initValues)
@@ -37,7 +37,7 @@ const ReflectionTracker = () => {
     if (!token.length) {
       return setLoading(false)
     }
-    Axios.get('https://api.glorydogecoin.com/api/v1/bscscan/reflections', { params: { token } })
+    Axios.get('http://localhost:5000/api/v1/bscscan/reflections', { params: { token } })
       .then(result => {
         setValues(result.data)
         setLoading(false)
@@ -68,15 +68,11 @@ const ReflectionTracker = () => {
     const width = 280
     const height = 280
     const radius = height / 2
-    const data = [values.reflections, values.purchased || 1]
+    const data = [values.reflections.value, values.purchased.value || 1]
 
     const pie = d3.pie().value(d => d)
     const arc = d3.arc().innerRadius(0).outerRadius(radius)
     const data_ready = pie(data)
-    // const midAngle = d => {
-    //   return d.startAngle + (d.endAngle - d.startAngle) / 2
-    // }
-    // const outerArc = d3.arc().innerRadius(radius).outerRadius(radius)
 
     d3.select('#pie-container svg').remove()
 
@@ -139,42 +135,6 @@ const ReflectionTracker = () => {
     svg.append('g').classed('labels', true)
     svg.append('g').classed('lines', true)
 
-    if (data[0]) {
-      // var polyline = svg
-      //   .select('.lines')
-      //   .selectAll('polyline')
-      //   .data(data_ready)
-      //   .enter()
-      //   .append('polyline')
-      //   .attr('points', function (d) {
-      //     // see label transform function for explanations of these three lines.
-      //     var pos = outerArc.centroid(d)
-      //     pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1)
-      //     return [arc.centroid(d), outerArc.centroid(d), pos]
-      //   })
-      //   .attr('stroke', 'white')
-      //   .attr('storke-width', '1px')
-      //   .attr('fill', 'none')
-      // svg
-      //   .select('.labels')
-      //   .selectAll('text')
-      //   .data(data_ready)
-      //   .enter()
-      //   .append('text')
-      //   .attr('dy', '.35em')
-      //   .html(function (d) {
-      //     return d.data
-      //   })
-      //   .attr('transform', function (d) {
-      //     var pos = outerArc.centroid(d)
-      //     pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1)
-      //     return 'translate(' + pos + ')'
-      //   })
-      //   .style('text-anchor', function (d) {
-      //     return midAngle(d) < Math.PI ? 'start' : 'end'
-      //   })
-    }
-
     svg
       .selectAll('chart')
       .data(data_ready)
@@ -187,15 +147,20 @@ const ReflectionTracker = () => {
   }
 
   const calcPro = useMemo(() => {
-    if (!values.purchased) return 0
-    const percentage = Math.round((values.reflections / values.purchased) * 100 * 1000) / 1000
+    if (!values.purchased.value) return 0
+    const percentage =
+      Math.round((values.reflections.value / values.purchased.value) * 100 * 1000) / 1000
     return percentage
   }, [values])
 
-  const Input = ({ title, value, onChange }) => {
+  const Input = ({ title, value, onChange, usd }) => {
     return (
-      <div className="relative m-5">
-        <p className="mb-5 text-base">{title}</p>
+      <div className="relative m-1 sm:m-5">
+        <div className="flex">
+          <p className="mb-5 text-base">{title}</p>
+          <p className="w-[180px] ml-1 truncate">({usd}</p>
+          <p>USD)</p>
+        </div>
         <div className="flex">
           <input
             placeholder="0.00000"
@@ -214,13 +179,13 @@ const ReflectionTracker = () => {
       <Container className="flex flex-col items-center px-1 py-6 bg-primary space-y-8">
         <h1 className="text-2xl font-bold leading-relaxed sm:text-4xl">Check your reflections</h1>
         <div className="md:w-[1014px] relative flex flex-col items-center w-full bg-darkBlue rounded-lg shadow-md overflow-hidden">
-          <div className="flex flex-col items-center p-5 w-full">
+          <div className="flex flex-col items-center p-1 w-full sm:p-5">
             <p className="text-center">Paste your GLORYD tokens holding wallet below</p>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="md:w-[600px] flex items-center p-1 w-full md:p-0">
             <input
               placeholder="0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-              className="placeholder-[#3A6D8D] focus:placeholder-transparent h-[40px] text-[#3A6D8D] w-[300px] sm:w-[400px] md:w-[600px] text-center bg-white rounded-md focus:outline-none transition duration-500"
+              className="placeholder-[#3A6D8D] focus:placeholder-transparent h-[40px] text-[#3A6D8D] w-full text-center bg-white rounded-md focus:outline-none transition duration-500"
               value={token || ''}
               onChange={e => setToken(e.target.value || '')}
             />
@@ -229,23 +194,27 @@ const ReflectionTracker = () => {
           <div className="grid gap-x-24 grid-cols-1 mt-5 sm:grid-cols-1 md:grid-cols-2">
             <Input
               title="Your balance"
-              value={values.balance}
-              onChange={e => setValues({ ...values, balance: e.target.value })}
+              value={values.balance.value}
+              usd={values.balance.usd}
+              onChange={e => setValues({ ...values, balance: { value: e.target.value } })}
             />
             <Input
               title="Total reflections"
-              value={values.reflections}
-              onChange={e => setValues({ ...values, reflections: e.target.value })}
+              value={values.reflections.value}
+              usd={values.reflections.usd}
+              onChange={e => setValues({ ...values, reflections: { value: e.target.value } })}
             />
             <Input
               title="# of GLORYD purchased"
-              value={values.purchased}
-              onChange={e => setValues({ ...values, purchased: e.target.value })}
+              value={values.purchased.value}
+              usd={values.purchased.usd}
+              onChange={e => setValues({ ...values, purchased: { value: e.target.value } })}
             />
             <Input
-              title="# of GLORYD sold ( 0 = Diamond hands )"
-              value={values.sold}
-              onChange={e => setValues({ ...values, sold: e.target.value })}
+              title="# of GLORYD sold"
+              value={values.sold.value}
+              usd={values.sold.usd}
+              onChange={e => setValues({ ...values, sold: { value: e.target.value } })}
             />
           </div>
           <div className="relative flex items-center justify-center w-full">
