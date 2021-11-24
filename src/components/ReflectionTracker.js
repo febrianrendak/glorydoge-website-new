@@ -153,8 +153,8 @@ const ReflectionTracker = () => {
     return percentage
   }, [values])
 
-  function numberCommaSeparator(value) {
-    return value.toLocaleString('en-US', {maximumFractionDigits: 15})
+  function numberCommaSeparator(value, fractionLimit) {
+    return parseFloat(value).toLocaleString('en-US', {maximumFractionDigits: fractionLimit})
   }
 
   const Input = ({ title, value, onChange, usd }) => {
@@ -164,7 +164,7 @@ const ReflectionTracker = () => {
           <p className="mb-2 text-base">{title}</p>
           {token && !loading && (
             <>
-              <p className="w-[180px] ml-1 truncate">({numberCommaSeparator(parseFloat(usd).toFixed(2))} USD)</p>
+              <p className="w-[180px] ml-1 truncate">({numberCommaSeparator(usd, 2)} USD)</p>
             </>
           )}
         </div>
@@ -173,7 +173,7 @@ const ReflectionTracker = () => {
             placeholder="0.00000"
             type="text"
             className="h-[40px] bg-[#041622] disabled px-4 w-full text-2xl rounded-lg outline-none opacity-100 truncate"
-            value={numberCommaSeparator(value)}
+            value={numberCommaSeparator(value,15)}
             onChange={onChange}
           />
         </div>
