@@ -37,7 +37,7 @@ const ReflectionTracker = () => {
     if (!token.length) {
       return setLoading(false)
     }
-    Axios.get('https://api.glorydogecoin.com/api/v1/bscscan/reflections', { params: { token } })
+    Axios.get('http://localhost:5000/api/v1/bscscan/reflections', { params: { token } })
       .then(result => {
         setValues(result.data)
         setLoading(false)
@@ -158,8 +158,12 @@ const ReflectionTracker = () => {
       <div className="relative m-1 sm:m-5">
         <div className="flex">
           <p className="mb-5 text-base">{title}</p>
-          <p className="w-[180px] ml-1 truncate">({usd}</p>
-          <p>USD)</p>
+          {token && !loading && usd !== 0 && (
+            <>
+              <p className="w-[180px] ml-1 truncate">({usd}</p>
+              <p>USD)</p>
+            </>
+          )}
         </div>
         <div className="flex">
           <input
@@ -182,7 +186,7 @@ const ReflectionTracker = () => {
           <div className="flex flex-col items-center p-1 w-full sm:p-5">
             <p className="text-center">Paste your GLORYD tokens holding wallet below</p>
           </div>
-          <div className="md:w-[600px] flex items-center p-1 w-full md:p-0">
+          <div className="md:w-[600px] flex items-center p-1 w-full sm:p-10 md:p-0">
             <input
               placeholder="0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
               className="placeholder-[#3A6D8D] focus:placeholder-transparent h-[40px] text-[#3A6D8D] w-full text-center bg-white rounded-md focus:outline-none transition duration-500"
