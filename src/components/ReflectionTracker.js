@@ -154,7 +154,7 @@ const ReflectionTracker = () => {
   }, [values])
 
   function numberCommaSeparator(value) {
-    return value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    return value.toLocaleString('en-US', {maximumFractionDigits: 15})
   }
 
   const Input = ({ title, value, onChange, usd }) => {
