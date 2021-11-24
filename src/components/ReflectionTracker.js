@@ -8,10 +8,10 @@ import Container from './Container'
 
 const ReflectionTracker = () => {
   const initValues = {
-    balance: { value: 0, usd: '' },
-    reflections: { value: 0, usd: '' },
-    purchased: { value: 0, usd: '' },
-    sold: { value: 0, usd: '' },
+    balance: { value: 0, usd: 0 },
+    reflections: { value: 0, usd: 0 },
+    purchased: { value: 0, usd: 0 },
+    sold: { value: 0, usd: 0 },
   }
   const [token, setToken] = useState('')
   const [values, setValues] = useState(initValues)
@@ -161,11 +161,10 @@ const ReflectionTracker = () => {
     return (
       <div className="relative m-1 sm:m-5">
         <div className="flex">
-          <p className="mb-5 text-base">{title}</p>
-          {token && !loading && usd !== 0 && (
+          <p className="mb-2 text-base">{title}</p>
+          {token && !loading && (
             <>
-              <p className="w-[180px] ml-1 truncate">({usd}</p>
-              <p>USD)</p>
+              <p className="w-[180px] ml-1 truncate">({numberCommaSeparator(parseFloat(usd).toFixed(2))} USD)</p>
             </>
           )}
         </div>
@@ -174,7 +173,7 @@ const ReflectionTracker = () => {
             placeholder="0.00000"
             type="text"
             className="h-[40px] bg-[#041622] disabled px-4 w-full text-2xl rounded-lg outline-none opacity-100 truncate"
-            value={value}
+            value={numberCommaSeparator(value)}
             onChange={onChange}
           />
         </div>
@@ -202,25 +201,25 @@ const ReflectionTracker = () => {
           <div className="grid gap-x-24 grid-cols-1 mt-5 sm:grid-cols-1 md:grid-cols-2">
             <Input
               title="Your balance"
-              value={numberCommaSeparator(values.balance.value)}
+              value={values.balance.value}
               usd={values.balance.usd}
               onChange={e => setValues({ ...values, balance: { value: e.target.value } })}
             />
             <Input
               title="Total reflections"
-              value={numberCommaSeparator(values.reflections.value)}
+              value={values.reflections.value}
               usd={values.reflections.usd}
               onChange={e => setValues({ ...values, reflections: { value: e.target.value } })}
             />
             <Input
               title="# of GLORYD purchased"
-              value={numberCommaSeparator(values.purchased.value)}
+              value={values.purchased.value}
               usd={values.purchased.usd}
               onChange={e => setValues({ ...values, purchased: { value: e.target.value } })}
             />
             <Input
               title="# of GLORYD sold"
-              value={numberCommaSeparator(values.sold.value)}
+              value={values.sold.value}
               usd={values.sold.usd}
               onChange={e => setValues({ ...values, sold: { value: e.target.value } })}
             />
