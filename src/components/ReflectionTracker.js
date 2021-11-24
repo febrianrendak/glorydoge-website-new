@@ -8,10 +8,10 @@ import Container from './Container'
 
 const ReflectionTracker = () => {
   const initValues = {
-    balance: { value: 0, usd: '' },
-    reflections: { value: 0, usd: '' },
-    purchased: { value: 0, usd: '' },
-    sold: { value: 0, usd: '' },
+    balance: { value: 0, usd: 0 },
+    reflections: { value: 0, usd: 0 },
+    purchased: { value: 0, usd: 0 },
+    sold: { value: 0, usd: 0 },
   }
   const [token, setToken] = useState('')
   const [values, setValues] = useState(initValues)
@@ -153,15 +153,18 @@ const ReflectionTracker = () => {
     return percentage
   }, [values])
 
+  function numberCommaSeparator(value) {
+    return value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   const Input = ({ title, value, onChange, usd }) => {
     return (
       <div className="relative m-1 sm:m-5">
         <div className="flex">
-          <p className="mb-5 text-base">{title}</p>
-          {token && !loading && usd !== 0 && (
+          <p className="mb-2 text-base">{title}</p>
+          {token && !loading && (
             <>
-              <p className="w-[180px] ml-1 truncate">({usd}</p>
-              <p>USD)</p>
+              <p className="w-[180px] ml-1 truncate">({numberCommaSeparator(parseFloat(usd).toFixed(2))} USD)</p>
             </>
           )}
         </div>
@@ -170,7 +173,7 @@ const ReflectionTracker = () => {
             placeholder="0.00000"
             type="text"
             className="h-[40px] bg-[#041622] disabled px-4 w-full text-2xl rounded-lg outline-none opacity-100 truncate"
-            value={value}
+            value={numberCommaSeparator(value)}
             onChange={onChange}
           />
         </div>
